@@ -1,0 +1,4 @@
+c:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\Debug\GooglePlacesApi.dll
+c:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\Debug\GooglePlacesApi.pdb
+c:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\obj\Debug\GooglePlacesApi.dll
+c:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\obj\Debug\GooglePlacesApi.pdb
