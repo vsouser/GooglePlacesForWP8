@@ -9,7 +9,7 @@ namespace GooglePlacesApi
 
     public static class Output
     {
-        public static string _json = "json";
-        public static string _xml = "xml";
+        public static string JSON = "json";
+        public static string XML = "xml";
     }
 }

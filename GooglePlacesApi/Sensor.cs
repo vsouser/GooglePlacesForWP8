@@ -8,7 +8,7 @@ namespace GooglePlacesApi
 {
     public static class Sensor
     {
-        public static string _true = "true";
-        public static string _false = "false";
+        public static string TRUE = "true";
+        public static string FALSE = "false";
     }
 }

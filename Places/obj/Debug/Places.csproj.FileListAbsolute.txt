@@ -17,3 +17,10 @@ c:\users\tokarew\documents\visual studio 2012\Projects\Places\Places\obj\Debug\P
 c:\users\tokarew\documents\visual studio 2012\Projects\Places\Places\obj\Debug\Places.dll
 c:\users\tokarew\documents\visual studio 2012\Projects\Places\Places\obj\Debug\Places.pdb
 c:\users\tokarew\documents\visual studio 2012\Projects\Places\Places\obj\Debug\XapCacheFile.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\Debug\GooglePlacesApi.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\Debug\System.Net.Http.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\Debug\GooglePlacesApi.pdb
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\Debug\System.Net.Http.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\Debug\Places.csprojResolveAssemblyReference.cache

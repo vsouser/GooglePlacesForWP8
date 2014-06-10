@@ -37,5 +37,22 @@ namespace Places
         //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
+
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            GooglePlacesApi.TypesFactory typesFactory = new GooglePlacesApi.TypesFactory(GooglePlacesApi.Types.Bar, GooglePlacesApi.Types.Food, GooglePlacesApi.Types.Restaurant);
+
+           
+
+            GooglePlacesApi.GeoLocationController geoLocationController = new GooglePlacesApi.GeoLocationController();
+            var location = await geoLocationController.GetLocation();
+
+            GooglePlacesApi.PlacesNearbyController pnc = new GooglePlacesApi.PlacesNearbyController("AIzaSyDuPZrLWqob5RVUuYjYSsIOzZEFw4sgm1s", GooglePlacesApi.Sensor._true, GooglePlacesApi.Output._json, location.ApiFormat, "200", GooglePlacesApi.Language.RUSSIAN, typesFactory.CreateType());
+
+            var places =  await pnc.GetPlaces();
+            MessageBox.Show(places.Result);
+        }
     }
 }

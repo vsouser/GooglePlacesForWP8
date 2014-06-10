@@ -1,0 +1,12 @@
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\GooglePlacesApi.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\GooglePlacesApi.pdb
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\Newtonsoft.Json.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Extensions.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Primitives.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\Newtonsoft.Json.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Extensions.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Primitives.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\obj\ARM\Debug\GooglePlacesApi.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\obj\ARM\Debug\GooglePlacesApi.pdb
