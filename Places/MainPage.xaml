@@ -47,7 +47,15 @@
 
         <!--ContentPanel — поместите здесь дополнительное содержимое-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <phone:LongListSelector ItemsSource="{Binding Places, Mode=TwoWay}">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="50">
+                            <TextBlock Text="{Binding Name, Mode=TwoWay}" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
         </Grid>
 
         <!--Раскомментируйте, чтобы увидеть сетку выравнивания и выровнять
@@ -58,5 +66,11 @@
             Перед сдачей приложения удалите этот код XAML и само изображение.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="AddMore" Click="AddMore_Click" IconUri="/Assets/AppBar/refresh.png" Text="Больше"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

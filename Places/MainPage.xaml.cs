@@ -8,11 +8,13 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Places.Resources;
+using GooglePlacesApi;
 
 namespace Places
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private PlacesNearbyController placeNerbyController;
         // Конструктор
         public MainPage()
         {
@@ -41,18 +43,33 @@ namespace Places
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+          
+            TypesFactory typesFactory = new TypesFactory(Types.BAR, Types.FOOD, Types.RESTAURANT);
+            placeNerbyController = new PlacesNearbyController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, Output.XML, "56.8239549679567,60.6172860176859", "500", false, Rankby.DISTANCE, "", "", GooglePlacesApi.Language.RUSSIAN, typesFactory.CreateType(), "", "");
+            
+            try
+            {
+                await placeNerbyController.GetPlaces();
+                ContentPanel.DataContext = placeNerbyController;
 
-            GooglePlacesApi.TypesFactory typesFactory = new GooglePlacesApi.TypesFactory(GooglePlacesApi.Types.Bar, GooglePlacesApi.Types.Food, GooglePlacesApi.Types.Restaurant);
+            }
+            catch (GooglePlacesApi.SearchPlacesException ex)
+            {
+                MessageBox.Show(ex.Name, ex.Name, MessageBoxButton.OK);
+            }
 
-           
+        }
 
-            GooglePlacesApi.GeoLocationController geoLocationController = new GooglePlacesApi.GeoLocationController();
-            var location = await geoLocationController.GetLocation();
-
-            GooglePlacesApi.PlacesNearbyController pnc = new GooglePlacesApi.PlacesNearbyController("AIzaSyDuPZrLWqob5RVUuYjYSsIOzZEFw4sgm1s", GooglePlacesApi.Sensor._true, GooglePlacesApi.Output._json, location.ApiFormat, "200", GooglePlacesApi.Language.RUSSIAN, typesFactory.CreateType());
-
-            var places =  await pnc.GetPlaces();
-            MessageBox.Show(places.Result);
+        private async void AddMore_Click(object sender, EventArgs e)
+        {
+            if (placeNerbyController.IsNextPage == true)
+            {
+                await placeNerbyController.GetPlaces();
+            }
+            else
+            {
+                MessageBox.Show("Все данные уже загружены");
+            }
         }
     }
 }

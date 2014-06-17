@@ -2,7 +2,10 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="Places" Source="Places.dll" />
     <AssemblyPart x:Name="GooglePlacesApi" Source="GooglePlacesApi.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
     <AssemblyPart x:Name="System.Net.Http" Source="System.Net.Http.dll" />
+    <AssemblyPart x:Name="HtmlAgilityPack" Source="HtmlAgilityPack.dll" />
     <AssemblyPart x:Name="System.Net.Http.Primitives" Source="System.Net.Http.Primitives.dll" />
+    <AssemblyPart x:Name="System.Xml.XPath" Source="System.Xml.XPath.dll" />
   </Deployment.Parts>
 </Deployment>

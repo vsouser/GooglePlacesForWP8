@@ -25,8 +25,8 @@ namespace GooglePlacesApi
             try
             {
                 Geoposition geoposition = await geolocator.GetGeopositionAsync(maximumAge: TimeSpan.FromMinutes(5), timeout: TimeSpan.FromSeconds(10));
-                return new Location(geoposition.Coordinate.Latitude, geoposition.Coordinate.Longitude);
-            }
+                return new Location() { Lat = geoposition.Coordinate.Latitude, Lng = geoposition.Coordinate.Longitude };
+            } 
             catch
             {
                 throw new Exception("Could not determine location");

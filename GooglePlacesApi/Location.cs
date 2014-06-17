@@ -12,12 +12,6 @@ namespace GooglePlacesApi
         public double Lat { get; set; }
         public double Lng { get; set; }
 
-        public Location(double latitude, double longitude)
-        {
-            this.Lat = latitude;
-            this.Lng = longitude;
-        }
-
         public string ApiFormat
         {
             get { return this.Lat.ToString(CultureInfo.InvariantCulture) + "," + this.Lng.ToString(CultureInfo.InvariantCulture); }
