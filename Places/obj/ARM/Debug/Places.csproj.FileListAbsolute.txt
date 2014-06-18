@@ -26,16 +26,3 @@ C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Deb
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\XapCacheFile.xml
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Newtonsoft.Json.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Newtonsoft.Json.xml
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\HtmlAgilityPack.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\System.Xml.XPath.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\HtmlAgilityPack.pdb
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\HtmlAgilityPack.xml
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\de\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\es\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\fr\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\it\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\ja\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\ko\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\ru\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\zh-Hans\System.Xml.XPath.resources.dll
-C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\zh-Hant\System.Xml.XPath.resources.dll

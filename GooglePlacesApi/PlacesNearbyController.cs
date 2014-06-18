@@ -30,8 +30,8 @@ namespace GooglePlacesApi
         private ObservableCollection<Place> places = new ObservableCollection<Place>();
 
 
-        public PlacesNearbyController(string key, string sensor, string output, string location, string radius, bool openNow, string rankby = "prominence", string minprice = "", string maxprice = "", string language = "", string types = "", string keyword = "", string name = "", string api = @"https://maps.googleapis.com/maps/api/place/")
-            : base(key, sensor, output, language, openNow, minprice, maxprice, api)
+        public PlacesNearbyController(string key, string sensor, string location, string radius, bool openNow, string rankby = "prominence", string minprice = "", string maxprice = "", string language = "", string types = "", string keyword = "", string name = "", string api = @"https://maps.googleapis.com/maps/api/place/")
+            : base(key, sensor, language, openNow, minprice, maxprice, api)
         {
             this.location = location;
             this.types = types;
@@ -109,11 +109,11 @@ namespace GooglePlacesApi
             {
                 if (rankby == Rankby.DISTANCE)
                 {
-                    url = api + "nearbysearch/" + output + "?" + "location=" + location + "&sensor=" + sensor + "&rankby=" + rankby + "&opennow=" + openNow.ToString();
+                    url = api + "nearbysearch/" + "json" + "?" + "location=" + location + "&sensor=" + sensor + "&rankby=" + rankby + "&opennow=" + openNow.ToString();
                 }
                 else
                 {
-                    url = api + "nearbysearch/" + output + "?" + "location=" + location + "&radius=" + radius + "&sensor=" + sensor + "&rankby=" + rankby + "&opennow=" + openNow.ToString();
+                    url = api + "nearbysearch/" + "json" + "?" + "location=" + location + "&radius=" + radius + "&sensor=" + sensor + "&rankby=" + rankby + "&opennow=" + openNow.ToString();
                 }
 
 
@@ -146,99 +146,69 @@ namespace GooglePlacesApi
             }
             else
             {
-                url = api + "nearbysearch/" + output + "?" + "pagetoken=" + NextPageToken + "&sensor=" + sensor + "&key=" + key;
+                url = api + "nearbysearch/" + "json" + "?" + "pagetoken=" + NextPageToken + "&sensor=" + sensor + "&key=" + key;
             }
 
             if (isNextPage == true)
             {
-                Result = await httpClient.GetStringAsync(url);
+                try
+                {
+                    Result = await httpClient.GetStringAsync(url);
+                }
+                catch
+                {
+                    throw new SearchPlacesException("No internet connection or server is not response", Status.INVALID_REQUEST);
+                }
             }
             else
             {
                 throw new SearchPlacesException("All the places on this request is already loaded", Status.OK);
             }
 
-            if (this.output == GooglePlacesApi.Output.JSON)
+            try
             {
-                try
-                {
-                    jObject = JObject.Parse(Result);
+                jObject = JObject.Parse(Result);
 
-                    if (HasField(jObject, "status") == true)
-                    {
-                        ResultStatus = jObject["status"].ToString();
-                    }
-                    else
-                    {
-                        throw new SearchPlacesException("Error parse json data", Status.INVALID_REQUEST);
-                    }
-                    if (HasField(jObject, "next_page_token") == true)
-                    {
-                        NextPageToken = jObject["next_page_token"].ToString();
-                        IsNextPage = true;
-                    }
-                    else
-                    {
-                        NextPageToken = String.Empty;
-                        IsNextPage = false;
-                    }
+                if (HasField(jObject, "status") == true)
+                {
+                    ResultStatus = jObject["status"].ToString();
                 }
-                catch
+                else
                 {
                     throw new SearchPlacesException("Error parse json data", Status.INVALID_REQUEST);
                 }
-
-                switch (searchStatus)
+                if (HasField(jObject, "next_page_token") == true)
                 {
-                    case Status.REQUEST_DENIED:
-                        throw new SearchPlacesException(jObject["error_message"].ToString(), Status.REQUEST_DENIED);
-                    case Status.ZERO_RESULTS:
-                        throw new SearchPlacesException("Results not found", Status.ZERO_RESULTS);
-                    case Status.INVALID_REQUEST:
-                        throw new SearchPlacesException("Required parameter is missing", Status.INVALID_REQUEST);
-                    case Status.OVER_QUERY_LIMIT:
-                        throw new SearchPlacesException("Quota is over", Status.OVER_QUERY_LIMIT);
-                    case Status.OK:
-                        AddRangePlaces(jObject);
-                        return Places;
-                    default:
-                        AddRangePlaces(jObject);
-                        return Places;
+                    NextPageToken = jObject["next_page_token"].ToString();
+                    IsNextPage = true;
+                }
+                else
+                {
+                    NextPageToken = String.Empty;
+                    IsNextPage = false;
                 }
             }
-            else
+            catch
             {
-                string xml = Result;
-                HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
-                document.LoadHtml(xml);
+                throw new SearchPlacesException("Error parse json data", Status.INVALID_REQUEST);
+            }
 
-                var xmlDocument = document.DocumentNode;
-                var rootCollection = xmlDocument.ChildNodes;
-                for (int i = 0; i < rootCollection.Count; i++)
-                {
-                    if (rootCollection[i].Name == "PlaceSearchResponse")
-                    {
-                        HtmlNode node = rootCollection[i];
-
-                        var placesNode = node.ChildNodes;
-
-                        for (int j = 0; j < placesNode.Count; j++)
-                        {
-                            if (placesNode[j].Name == "status")
-                            {
-                                ResultStatus = placesNode[j].InnerText;
-                            }
-                            if (placesNode[j].Name == "next_page_token")
-                            {
-                                NextPageToken = placesNode[j].InnerText;
-                            }
-            
-                        }
-                    }
-                
-                }
-                    //AddRangePlaces(jObject);
-                return Places;
+            switch (searchStatus)
+            {
+                case Status.REQUEST_DENIED:
+                    throw new SearchPlacesException(jObject["error_message"].ToString(), Status.REQUEST_DENIED);
+                case Status.ZERO_RESULTS:
+                    throw new SearchPlacesException("Results not found", Status.ZERO_RESULTS);
+                case Status.INVALID_REQUEST:
+                    throw new SearchPlacesException("Required parameter is missing", Status.INVALID_REQUEST);
+                case Status.OVER_QUERY_LIMIT:
+                    throw new SearchPlacesException("Quota is over", Status.OVER_QUERY_LIMIT);
+                case Status.OK:
+                    AddRangePlaces(jObject);
+                    return Places;
+                default:
+                    AddRangePlaces(jObject);
+                    return Places;
             }
         }
 

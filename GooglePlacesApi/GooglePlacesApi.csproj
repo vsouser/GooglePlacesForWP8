@@ -91,7 +91,6 @@
     <Compile Include="Location.cs" />
     <Compile Include="NotifyPropertyBase.cs" />
     <Compile Include="OpenNow.cs" />
-    <Compile Include="Output.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="PriceLevel.cs" />
