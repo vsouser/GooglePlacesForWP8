@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -36,6 +39,33 @@ namespace GooglePlacesApi
             {
                 return language;
             }
+        }
+
+        protected void AddRangePlaces(JObject jObject, ObservableCollection<Place> Places)
+        {
+            List<Place> apiPlace = ParseJson(jObject);
+            for (int i = 0; i < apiPlace.Count; i++)
+            {
+                Places.Add(apiPlace[i]);
+            }
+        }
+
+        protected bool HasField(JObject jObject, string value)
+        {
+            if (jObject[value] != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        protected List<Place> ParseJson(JObject jObject)
+        {
+            var results = jObject["results"].ToString();
+            return JsonConvert.DeserializeObject<List<Place>>(results, new PlaceConverter());
         }
     }
 }

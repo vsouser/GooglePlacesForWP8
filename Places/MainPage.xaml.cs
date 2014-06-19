@@ -55,7 +55,7 @@ namespace Places
             }
             catch (GooglePlacesApi.SearchPlacesException ex)
             {
-                MessageBox.Show(ex.Name, ex.Name, MessageBoxButton.OK);
+                MessageBox.Show(ex.Message, ex.Name, MessageBoxButton.OK);
             }
 
         }
