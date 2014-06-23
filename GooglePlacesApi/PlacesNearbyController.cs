@@ -13,7 +13,7 @@ namespace GooglePlacesApi
     /// <summary>
     /// 
     /// </summary>
-    public class PlacesNearbyController : PlacesController, IPlacesController
+    public class PlacesNearbyController : SearchPlacesController, IPlacesController
     {
         private string location;
         private string radius;
@@ -30,8 +30,8 @@ namespace GooglePlacesApi
         private ObservableCollection<Place> places = new ObservableCollection<Place>();
 
 
-        public PlacesNearbyController(string key, string sensor, string location, string radius, bool openNow, string rankby = "prominence", string minprice = "", string maxprice = "", string language = "", string types = "", string keyword = "", string name = "", string api = @"https://maps.googleapis.com/maps/api/place/")
-            : base(key, sensor, language, openNow, minprice, maxprice, api)
+        public PlacesNearbyController(string key, string sensor, string language, bool openNow, string minprice, string maxprice, string location, string types, string radius, string keyword, string name, string rankby = "prominence")
+            : base(key, sensor, language, openNow, minprice, maxprice)
         {
             this.location = location;
             this.types = types;

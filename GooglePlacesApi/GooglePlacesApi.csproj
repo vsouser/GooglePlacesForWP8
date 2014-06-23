@@ -93,10 +93,11 @@
     <Compile Include="OpenNow.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="Place.cs" />
+    <Compile Include="PlaceController.cs" />
     <Compile Include="PriceLevel.cs" />
     <Compile Include="Rankby.cs" />
     <Compile Include="SearchResult.cs" />
-    <Compile Include="PlacesController.cs" />
+    <Compile Include="SearchPlacesController.cs" />
     <Compile Include="PlacesNearbyController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchPlacesException.cs" />

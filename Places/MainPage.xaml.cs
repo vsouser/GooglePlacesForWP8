@@ -45,7 +45,7 @@ namespace Places
             base.OnNavigatedTo(e);
           
             TypesFactory typesFactory = new TypesFactory(Types.BAR, Types.FOOD, Types.RESTAURANT);
-            placeNerbyController = new PlacesNearbyController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "56.8239549679567,60.6172860176859", "500", false, Rankby.DISTANCE, "", "", GooglePlacesApi.Language.RUSSIAN, typesFactory.CreateType(), "", "");
+            placeNerbyController = new PlacesNearbyController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "", false, "", "", "56.8239549679567,60.6172860176859", typesFactory.CreateType(), "500", "", "", Rankby.DISTANCE);
             
             try
             {

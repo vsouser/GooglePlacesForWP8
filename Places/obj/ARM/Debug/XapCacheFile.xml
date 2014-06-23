@@ -1,15 +1,15 @@
-﻿<xapCache source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Places_Debug_ARM.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="19.06.2014 15:40:21">
-  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\Places.dll" archivePath="Places.dll" lastWriteTime="19.06.2014 15:40:20" />
+﻿<xapCache source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Places_Debug_ARM.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="23.06.2014 17:21:58">
+  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\Places.dll" archivePath="Places.dll" lastWriteTime="23.06.2014 17:21:57" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="09.06.2014 14:55:24" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Assets\AppBar\refresh.png" archivePath="Assets\AppBar\refresh.png" lastWriteTime="05.06.2013 6:44:54" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="09.06.2014 14:55:24" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="09.06.2014 14:55:24" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="09.06.2014 14:55:24" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="09.06.2014 14:55:24" />
-  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="19.06.2014 15:21:51" />
+  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="20.06.2014 17:55:38" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="09.06.2014 14:55:24" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="09.06.2014 14:55:24" />
-  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\GooglePlacesApi.dll" archivePath="GooglePlacesApi.dll" lastWriteTime="19.06.2014 15:21:50" />
+  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\GooglePlacesApi.dll" archivePath="GooglePlacesApi.dll" lastWriteTime="20.06.2014 18:00:48" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\Newtonsoft.Json.dll" archivePath="Newtonsoft.Json.dll" lastWriteTime="10.06.2014 14:40:58" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.dll" archivePath="System.Net.Http.dll" lastWriteTime="10.06.2014 14:42:05" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Primitives.dll" archivePath="System.Net.Http.Primitives.dll" lastWriteTime="10.06.2014 14:42:05" />
@@ -21,5 +21,5 @@
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Xml.XPath.dll" archivePath="System.Xml.XPath.dll" lastWriteTime="10.03.2011 2:08:16" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\packages\HtmlAgilityPack.1.4.6\lib\sl4-windowsphone71\HtmlAgilityPack.xml" archivePath="HtmlAgilityPack.xml" lastWriteTime="17.06.2014 16:54:02" />
   <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\packages\Microsoft.Net.Http.2.2.22\lib\sl4-windowsphone71\System.Net.Http.Extensions.xml" archivePath="System.Net.Http.Extensions.xml" lastWriteTime="10.06.2014 14:42:05" />
-  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="19.06.2014 15:21:51" />
+  <file source="C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="20.06.2014 17:55:38" />
 </xapCache>
