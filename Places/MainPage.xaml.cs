@@ -14,7 +14,8 @@ namespace Places
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private PlacesNearbyController placeNerbyController;
+        private NearbySearchController placeNerbyController;
+        private TextSearchController textSearchController;
         // Конструктор
         public MainPage()
         {
@@ -45,12 +46,13 @@ namespace Places
             base.OnNavigatedTo(e);
           
             TypesFactory typesFactory = new TypesFactory(Types.BAR, Types.FOOD, Types.RESTAURANT);
-            placeNerbyController = new PlacesNearbyController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "", false, "", "", "56.8239549679567,60.6172860176859", typesFactory.CreateType(), "500", "", "", Rankby.DISTANCE);
-            
+         //   placeNerbyController = new NearbySearchController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "", "400", "56.8239549679567,60.6172860176859", false, "", "",  typesFactory.CreateType(), "", "", Rankby.DISTANCE);
+            textSearchController = new TextSearchController("Ресторан", "AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "200", "56.8239549679567,60.6172860176859", GooglePlacesApi.Language.RUSSIAN, true, "", "", "");
+ 
             try
             {
-                await placeNerbyController.GetPlaces();
-                ContentPanel.DataContext = placeNerbyController;
+                await textSearchController.GetPlaces();
+                ContentPanel.DataContext = textSearchController;
 
             }
             catch (GooglePlacesApi.SearchPlacesException ex)
@@ -62,9 +64,9 @@ namespace Places
 
         private async void AddMore_Click(object sender, EventArgs e)
         {
-            if (placeNerbyController.IsNextPage == true)
+            if (textSearchController.IsNextPage == true)
             {
-                await placeNerbyController.GetPlaces();
+                await textSearchController.GetPlaces();
             }
             else
             {

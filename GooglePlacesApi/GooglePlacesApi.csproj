@@ -98,11 +98,12 @@
     <Compile Include="Rankby.cs" />
     <Compile Include="SearchResult.cs" />
     <Compile Include="SearchPlacesController.cs" />
-    <Compile Include="PlacesNearbyController.cs" />
+    <Compile Include="NearbySearchController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchPlacesException.cs" />
     <Compile Include="Sensor.cs" />
     <Compile Include="Status.cs" />
+    <Compile Include="TextSearchController.cs" />
     <Compile Include="Types.cs" />
     <Compile Include="TypesFactory.cs" />
   </ItemGroup>
