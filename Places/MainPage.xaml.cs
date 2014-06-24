@@ -16,6 +16,7 @@ namespace Places
     {
         private NearbySearchController placeNerbyController;
         private TextSearchController textSearchController;
+        private MassSearchController massSearchController;
         // Конструктор
         public MainPage()
         {
@@ -47,7 +48,8 @@ namespace Places
           
             TypesFactory typesFactory = new TypesFactory(Types.BAR, Types.FOOD, Types.RESTAURANT);
          //   placeNerbyController = new NearbySearchController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "", "400", "56.8239549679567,60.6172860176859", false, "", "",  typesFactory.CreateType(), "", "", Rankby.DISTANCE);
-            textSearchController = new TextSearchController("Ресторан", "AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "200", "56.8239549679567,60.6172860176859", GooglePlacesApi.Language.RUSSIAN, true, "", "", "");
+            textSearchController = new TextSearchController("Ресторан", "AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "600", "56.8239549679567,60.6172860176859", GooglePlacesApi.Language.RUSSIAN, true, "", "", "");
+            //massSearchController = new MassSearchController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "4000", "56.8239549679567,60.6172860176859", typesFactory.CreateType());
  
             try
             {

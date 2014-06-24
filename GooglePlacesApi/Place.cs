@@ -12,6 +12,7 @@ namespace GooglePlacesApi
         public List<Event> Events { get; set; }
         public string Icon { get; set; }
         public string Id { get; set; }
+        public string Place_id { get; set; }
         public Geometry Geometry { get; set; }
         public string Name { get; set; }
         public OpenNow Opening_hours { get; set; }
