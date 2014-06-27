@@ -51,7 +51,7 @@
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
                         <Grid Height="50">
-                            <TextBlock Text="{Binding Place_id, Mode=TwoWay}" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                            <TextBlock Text="{Binding Name, Mode=TwoWay}" TextWrapping="Wrap" Foreground="White"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>

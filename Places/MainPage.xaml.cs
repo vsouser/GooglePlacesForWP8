@@ -9,14 +9,14 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Places.Resources;
 using GooglePlacesApi;
+using System.Globalization;
 
 namespace Places
 {
     public partial class MainPage : PhoneApplicationPage
     {
         private NearbySearchController placeNerbyController;
-        private TextSearchController textSearchController;
-        private MassSearchController massSearchController;
+
         // Конструктор
         public MainPage()
         {
@@ -45,16 +45,19 @@ namespace Places
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-          
-            TypesFactory typesFactory = new TypesFactory(Types.BAR, Types.FOOD, Types.RESTAURANT);
-         //   placeNerbyController = new NearbySearchController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "", "400", "56.8239549679567,60.6172860176859", false, "", "",  typesFactory.CreateType(), "", "", Rankby.DISTANCE);
-            textSearchController = new TextSearchController("Ресторан", "AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "600", "56.8239549679567,60.6172860176859", GooglePlacesApi.Language.RUSSIAN, true, "", "", "");
-            //massSearchController = new MassSearchController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, "4000", "56.8239549679567,60.6172860176859", typesFactory.CreateType());
+
+            TypesFactory typesFactory = new TypesFactory(Types.ACCOUNTING);
+
+            LanguageController languageController = new LanguageController();
+
+            string curentLanguage = languageController.GetGooglePlacesLanguage();
+
+            placeNerbyController = new NearbySearchController("AIzaSyAw88u3a8lUo05LML78sW2F74x20QB03sA", Sensor.TRUE, GooglePlacesApi.Language.RUSSIAN, "400", "56.8239549679567,60.6172860176859", false, "", "",  typesFactory.CreateType(), "", "", Rankby.DISTANCE);
  
             try
             {
-                await textSearchController.GetPlaces();
-                ContentPanel.DataContext = textSearchController;
+                await placeNerbyController.GetPlaces();
+                ContentPanel.DataContext = placeNerbyController;
 
             }
             catch (GooglePlacesApi.SearchPlacesException ex)
@@ -66,9 +69,9 @@ namespace Places
 
         private async void AddMore_Click(object sender, EventArgs e)
         {
-            if (textSearchController.IsNextPage == true)
+            if (placeNerbyController.IsNextPage == true)
             {
-                await textSearchController.GetPlaces();
+                await placeNerbyController.GetPlaces();
             }
             else
             {

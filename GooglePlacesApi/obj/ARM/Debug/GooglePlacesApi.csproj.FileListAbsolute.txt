@@ -23,3 +23,4 @@ C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bi
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\ru\System.Xml.XPath.resources.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\zh-Hans\System.Xml.XPath.resources.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\zh-Hant\System.Xml.XPath.resources.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\obj\ARM\Debug\GooglePlacesApi.csprojResolveAssemblyReference.cache
