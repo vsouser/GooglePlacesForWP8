@@ -42,8 +42,6 @@ namespace GooglePlacesApi
             dictionary.Add("Swedish", Language.SWEDISH);
             dictionary.Add("Vietnamese", Language.VIETNAMESE);
             dictionary.Add("Ukrainian", Language.UKRAINIAN);
-            dictionary.Add("Vietnamese", Language.VIETNAMESE);
-
         }
 
         public string GetGooglePlacesLanguage()

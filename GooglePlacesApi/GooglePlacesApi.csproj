@@ -86,6 +86,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="GeoLocationController.cs" />
     <Compile Include="Geometry.cs" />
+    <Compile Include="GoogleApiKeyTable.cs" />
     <Compile Include="IPlacesController.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageController.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Photo.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="PlaceController.cs" />
+    <Compile Include="PlaceInfoController.cs" />
     <Compile Include="PriceLevel.cs" />
     <Compile Include="Rankby.cs" />
     <Compile Include="SearchResult.cs" />

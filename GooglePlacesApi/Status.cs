@@ -9,9 +9,11 @@ namespace GooglePlacesApi
     public static class Status
     {
         public const string OK = "OK";
+        public const string UNKNOWN_ERROR = "UNKNOWN_ERROR";
         public const string ZERO_RESULTS = "ZERO_RESULTS";
         public const string OVER_QUERY_LIMIT = "OVER_QUERY_LIMIT";
         public const string REQUEST_DENIED = "REQUEST_DENIED";
         public const string INVALID_REQUEST = "INVALID_REQUEST";
+        public const string NOT_FOUND = "NOT_FOUND";
     }
 }

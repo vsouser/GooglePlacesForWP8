@@ -47,7 +47,7 @@ namespace GooglePlacesApi
             }
 
 
-            url += "&key=" + key;
+            url += "&keys=" + key;
 
             await GetData(url);
 

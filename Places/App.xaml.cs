@@ -18,6 +18,8 @@ namespace Places
         /// <returns>Корневой кадр приложения телефона.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
+        public static GooglePlacesApi.Place SelectPlace { get; set; }
+
         /// <summary>
         /// Конструктор объекта приложения.
         /// </summary>

@@ -4,6 +4,8 @@ Processing file: C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\P
 File C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\GooglePlacesApi.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\HtmlAgilityPack.dll
 File C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\HtmlAgilityPack.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\Microsoft.Phone.Controls.dll
+File C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\Microsoft.Phone.Controls.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\Newtonsoft.Json.dll
 File C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\Newtonsoft.Json.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\MDIL\Places.dll

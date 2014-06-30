@@ -26,3 +26,6 @@ C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Deb
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\XapCacheFile.xml
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Newtonsoft.Json.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Newtonsoft.Json.xml
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\Pages\MainPanorama.g.cs
+C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\PlaceInfo.g.cs

@@ -100,6 +100,9 @@
     <Compile Include="Pages\MainPanorama.xaml.cs">
       <DependentUpon>MainPanorama.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PlaceInfo.xaml.cs">
+      <DependentUpon>PlaceInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +120,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPanorama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlaceInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
