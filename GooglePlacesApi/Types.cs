@@ -34,7 +34,7 @@ namespace GooglePlacesApi
         public const string CITY_HALL = "city_hall";
         public const string CLOTHING_STORE = "clothing_store";
         public const string CONVENIENCE_STORE = "convenience_store";
-        public const string СOURTHOUSE = "courthouse";
+        public const string COURTHOUSE = "courthouse";
         public const string DENTIST = "dentist";
         public const string DEPARTMENT_STORE = "department_store";
         public const string DOCTOR = "doctor";
@@ -85,6 +85,7 @@ namespace GooglePlacesApi
         public const string PHYSIOTHERAPIST = "physiotherapist";
         public const string PLACE_OF_WORSHIP = "place_of_worship";
         public const string PLUMBER = "plumber";
+        public const string POLICE = "police";
         public const string POST_OFFICE = "post_office";
         public const string REAL_ESTATE_AGENCY = "real_estate_agency";
         public const string RESTAURANT = "restaurant";

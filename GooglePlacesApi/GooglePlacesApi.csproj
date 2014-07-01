@@ -83,6 +83,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AddressComponents.cs" />
+    <Compile Include="Aspect.cs" />
+    <Compile Include="EnglishTypesCreator.cs" />
+    <Compile Include="RussiaTypesCreator.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="GeoLocationController.cs" />
     <Compile Include="Geometry.cs" />
@@ -97,9 +101,11 @@
     <Compile Include="Photo.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="PlaceController.cs" />
+    <Compile Include="PlaceInfo.cs" />
     <Compile Include="PlaceInfoController.cs" />
     <Compile Include="PriceLevel.cs" />
     <Compile Include="Rankby.cs" />
+    <Compile Include="Review.cs" />
     <Compile Include="SearchResult.cs" />
     <Compile Include="SearchPlacesController.cs" />
     <Compile Include="NearbySearchController.cs" />
@@ -108,7 +114,9 @@
     <Compile Include="Sensor.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="TextSearchController.cs" />
+    <Compile Include="Type.cs" />
     <Compile Include="Types.cs" />
+    <Compile Include="TypesController.cs" />
     <Compile Include="TypesFactory.cs" />
   </ItemGroup>
   <ItemGroup>

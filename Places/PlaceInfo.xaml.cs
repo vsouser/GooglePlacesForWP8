@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using GooglePlacesApi;
 
 namespace Places
 {
@@ -15,6 +16,18 @@ namespace Places
         public PlaceInfo()
         {
             InitializeComponent();
+        }
+
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+
+
+            GooglePlacesApi.PlaceInfoController placeInfoController = new GooglePlacesApi.PlaceInfoController(App.GoogleApiKeyTable.GetKey(), App.SelectPlace.Reference, GooglePlacesApi.Sensor.TRUE, "", App.LanguageController.GetGooglePlacesLanguage());
+            var info = await placeInfoController.GetPlaceInfo();
+
+            MessageBox.Show(info.Formatted_address);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace GooglePlacesApi
 
     class PlaceConverter : CustomCreationConverter<Place>
     {
-        public override Place Create(Type objectType)
+        public override Place Create(System.Type objectType)
         {
             return new Place();
         }

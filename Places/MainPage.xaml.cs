@@ -46,17 +46,9 @@ namespace Places
         {
             base.OnNavigatedTo(e);
 
-            TypesFactory typesFactory = new TypesFactory(Types.ACCOUNTING);
-
-            LanguageController languageController = new LanguageController();
-
-            string curentLanguage = languageController.GetGooglePlacesLanguage();
-
-            GoogleApiKeyTable googleApiKeyTable = new GoogleApiKeyTable("AIzaSyCmlHiWshBC77iFO8lJp5VqLjZurbSDcXU", "AIzaSyCRuDl06RN51s-rzbICyjagZERWSKRpep4", "AIzaSyAhMx9QEuodwotkLM0MrH-j5_7aHFEgZDo", "AIzaSyD_SAiM0LqhMn0MzJ56KvrdKm1eROoqTM4", "AIzaSyAYQdeRFOz8Vin_pzdmg2ZAr0HjDUyiTO8");
-
-            string key = googleApiKeyTable.GetKey();
-
-            placeNerbyController = new NearbySearchController(key, Sensor.TRUE, GooglePlacesApi.Language.RUSSIAN, "400", "56.8239549679567,60.6172860176859", false, "", "", typesFactory.CreateType(), "", "", Rankby.DISTANCE);
+            TypesFactory typesFactory = new TypesFactory(Types.TRAIN_STATION);
+         
+            placeNerbyController = new NearbySearchController(App.GoogleApiKeyTable.GetKey(), Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "600", "56.8239549679567,60.6172860176859", false, "", "", typesFactory.CreateType(), "", "", Rankby.DISTANCE);
  
             try
             {
