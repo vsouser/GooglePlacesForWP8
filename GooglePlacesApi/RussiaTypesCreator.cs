@@ -29,7 +29,7 @@ namespace GooglePlacesApi
             list.Add(CreateType(Types.CAMPGROUND, "Лагерь"));
             list.Add(CreateType(Types.CAR_DEALER, "Автодилер"));
             list.Add(CreateType(Types.CAR_RENTAL, "Прокат автомобилей"));
-            list.Add(CreateType(Types.CAR_REPAIR, "Ремонт автомобилей"));
+            list.Add(CreateType(Types.CAR_REPAIR, "Автосервис"));
             list.Add(CreateType(Types.CAR_WASH, "Авто мойка"));
             list.Add(CreateType(Types.CASINO, "Казино"));
             list.Add(CreateType(Types.CEMETERY, "Кладбище"));
@@ -69,7 +69,7 @@ namespace GooglePlacesApi
             list.Add(CreateType(Types.LIQUOR_STORE, "Винный магазин"));
             list.Add(CreateType(Types.LOCAL_GOVERNMENT_OFFICE, "Местная администрация"));
             list.Add(CreateType(Types.LOCKSMITH, "Слесарь"));
-            list.Add(CreateType(Types.LODGING, "Жилье"));
+            list.Add(CreateType(Types.LODGING, "Гостницы"));
             list.Add(CreateType(Types.MEAL_DELIVERY, "Доставка еды"));
             list.Add(CreateType(Types.MEAL_TAKEAWAY, "Еда на вынос"));
             list.Add(CreateType(Types.MOSQUE, "Мечеть"));
@@ -107,6 +107,7 @@ namespace GooglePlacesApi
             list.Add(CreateType(Types.UNIVERSITY, "Университет"));
             list.Add(CreateType(Types.VETERINARY_CARE, "Ветеринарная помощь"));
             list.Add(CreateType(Types.ZOO, "Зоопарк"));
+            list.Add(CreateType(Types.OTHER, "Другие"));
             return list;
         }
 

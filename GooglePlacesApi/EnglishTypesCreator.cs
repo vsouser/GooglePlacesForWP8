@@ -107,6 +107,7 @@ namespace GooglePlacesApi
             list.Add(CreateType(Types.UNIVERSITY, "University"));
             list.Add(CreateType(Types.VETERINARY_CARE, "Veterinary care"));
             list.Add(CreateType(Types.ZOO, "Zoo"));
+            list.Add(CreateType(Types.OTHER, "Other"));
             return list;
         }
 

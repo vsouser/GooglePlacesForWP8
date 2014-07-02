@@ -106,5 +106,7 @@ namespace GooglePlacesApi
         public const string UNIVERSITY = "university";
         public const string VETERINARY_CARE = "veterinary_care";
         public const string ZOO = "zoo";
+
+        public const string OTHER = "other";
     }
 }

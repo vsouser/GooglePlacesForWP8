@@ -15,7 +15,7 @@
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot">
-        <phone:Panorama>
+        <phone:Panorama x:Name="MainContainer">
             <phone:Panorama.Title>
                 <Grid Margin="12,35,0,0">
                     <Grid.ColumnDefinitions>
@@ -34,8 +34,18 @@
                         <TextBlock FontSize="50" Text="Поблизости"></TextBlock>
                     </Grid>
                 </phone:PanoramaItem.Header>
-                <Grid Margin="14,-30,0,0">
-                   
+                
+                <Grid Margin="13,-30,0,16">
+                    <phone:LongListSelector ItemsSource="{Binding Reqiure, Mode=OneWay}" LayoutMode="Grid" GridCellSize="195,195">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,11,11,0" Background="#F4981F">
+                                    <Image Source="{Binding Image}" Stretch="None"></Image>
+                                    <TextBlock Foreground="White" VerticalAlignment="Bottom" FontSize="21" Margin="13,0,0,9" Text="{Binding Name}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
                 </Grid>
             </phone:PanoramaItem>
 

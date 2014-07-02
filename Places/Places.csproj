@@ -109,6 +109,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\MainPanoramaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -142,6 +143,12 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Tiles\Icon\ATM.png" />
+    <Content Include="Assets\Tiles\Icon\Bank.png" />
+    <Content Include="Assets\Tiles\Icon\Bar.png" />
+    <Content Include="Assets\Tiles\Icon\CarService.png" />
+    <Content Include="Assets\Tiles\Icon\FindOther.png" />
+    <Content Include="Assets\Tiles\Icon\Health.png" />
     <Content Include="Assets\Icon.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -158,6 +165,12 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Tiles\Icon\Hospital.png" />
+    <Content Include="Assets\Tiles\Icon\Hotel.png" />
+    <Content Include="Assets\Tiles\Icon\Movie.png" />
+    <Content Include="Assets\Tiles\Icon\Police.png" />
+    <Content Include="Assets\Tiles\Icon\Restaurant.png" />
+    <Content Include="Assets\Tiles\Icon\Station.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

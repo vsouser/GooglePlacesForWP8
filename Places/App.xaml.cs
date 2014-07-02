@@ -22,6 +22,8 @@ namespace Places
         public static Place SelectPlace { get; set; }
         public static LanguageController LanguageController { get; set; }
         public static GoogleApiKeyTable GoogleApiKeyTable { get; set; }
+        public static GeoLocationController GeoLocationController { get; set; }
+        public static TypesController TypesContoller { get; set; }
 
 
         /// <summary>
@@ -69,6 +71,10 @@ namespace Places
         {
             LanguageController = new LanguageController();
             GoogleApiKeyTable = new GoogleApiKeyTable("AIzaSyCmlHiWshBC77iFO8lJp5VqLjZurbSDcXU", "AIzaSyCRuDl06RN51s-rzbICyjagZERWSKRpep4", "AIzaSyAhMx9QEuodwotkLM0MrH-j5_7aHFEgZDo", "AIzaSyD_SAiM0LqhMn0MzJ56KvrdKm1eROoqTM4", "AIzaSyAYQdeRFOz8Vin_pzdmg2ZAr0HjDUyiTO8");
+            TypesContoller = new TypesController(LanguageController.GetGooglePlacesLanguage());
+            TypesContoller.Instance();
+
+
         }
 
         // Код для выполнения при активации приложения (переводится в основной режим)

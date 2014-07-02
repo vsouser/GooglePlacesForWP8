@@ -46,7 +46,7 @@ namespace Places
         {
             base.OnNavigatedTo(e);
 
-            TypesFactory typesFactory = new TypesFactory(Types.TRAIN_STATION);
+            TypesFactory typesFactory = new TypesFactory(Types.LODGING);
          
             placeNerbyController = new NearbySearchController(App.GoogleApiKeyTable.GetKey(), Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "600", "56.8239549679567,60.6172860176859", false, "", "", typesFactory.CreateType(), "", "", Rankby.DISTANCE);
  
