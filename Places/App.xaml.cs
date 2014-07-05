@@ -8,6 +8,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Places.Resources;
 using GooglePlacesApi;
+using Places.ViewModel;
 
 namespace Places
 {
@@ -18,6 +19,11 @@ namespace Places
         /// </summary>
         /// <returns>Корневой кадр приложения телефона.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        public static MainPanoramaViewModel MainPanoramaViewModel { get; set; }
+        public static NetworkErrorViewModel NetworkErrorViewModel { get; set; }
+        public static NerbySimplySearchViewModel NerbySearchViewModel { get; set; }
+        public static GeoLocationErrorViewModel GeoLocationErrorViewModel { get; set; }
 
         public static Place SelectPlace { get; set; }
         public static LanguageController LanguageController { get; set; }
@@ -74,7 +80,9 @@ namespace Places
             TypesContoller = new TypesController(LanguageController.GetGooglePlacesLanguage());
             TypesContoller.Instance();
 
-
+            App.MainPanoramaViewModel = new MainPanoramaViewModel(TypesContoller.Require);
+            App.NetworkErrorViewModel = new NetworkErrorViewModel();
+            App.GeoLocationErrorViewModel = new GeoLocationErrorViewModel();
         }
 
         // Код для выполнения при активации приложения (переводится в основной режим)

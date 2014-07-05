@@ -29,3 +29,35 @@ C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Deb
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\Bin\ARM\Debug\Microsoft.Phone.Controls.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\Pages\MainPanorama.g.cs
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\Places\obj\ARM\Debug\PlaceInfo.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Assets\ApplicationIcon.png
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Places.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Places.pdb
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\AppManifest.xaml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Properties\WMAppManifest.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Places_Debug_ARM.xap
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\GooglePlacesApi.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Microsoft.Phone.Controls.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Newtonsoft.Json.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\System.Net.Http.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\System.Net.Http.Primitives.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\GooglePlacesApi.pdb
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\Newtonsoft.Json.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\System.Net.Http.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Debug\System.Net.Http.Primitives.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Places.csprojResolveAssemblyReference.cache
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\App.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\MainPage.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Pages\MainPanorama.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\PlaceInfo.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Places.g.resources
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Places.Resources.AppResources.resources
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Places.csproj.GenerateResource.Cache
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Places.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Places.pdb
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\XapCacheFile.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Debug\Pages\NetworkError.g.cs

@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot содержит корневую сетку, где размещается все содержимое страницы-->
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" Background="#034888">
         <phone:Panorama x:Name="MainContainer">
             <phone:Panorama.Title>
                 <Grid Margin="12,35,0,0">
@@ -23,7 +23,7 @@
                             <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Source="/Assets/Icon.png" Stretch="None" HorizontalAlignment="Left"></Image>
-                    <TextBlock Grid.Column="1" Margin="20,5,0,0" VerticalAlignment="Center" FontSize="70" Text="Поиск мест"></TextBlock>
+                    <TextBlock Foreground="#1BA1E2" Grid.Column="1" Margin="20,5,0,0" VerticalAlignment="Center" FontSize="70" Text="Поиск мест"></TextBlock>
                 </Grid>
             </phone:Panorama.Title>
 
@@ -31,17 +31,17 @@
             <phone:PanoramaItem >
                 <phone:PanoramaItem.Header>
                     <Grid>
-                        <TextBlock FontSize="50" Text="Поблизости"></TextBlock>
+                        <TextBlock FontSize="50" Foreground="#1BA1E2" Text="Поблизости"></TextBlock>
                     </Grid>
                 </phone:PanoramaItem.Header>
                 
                 <Grid Margin="13,-30,0,16">
-                    <phone:LongListSelector ItemsSource="{Binding Reqiure, Mode=OneWay}" LayoutMode="Grid" GridCellSize="195,195">
+                    <phone:LongListSelector x:Name="NerbyTile" Tap="NerbyTile_Tap" ItemsSource="{Binding Reqiure, Mode=OneWay}" LayoutMode="Grid" GridCellSize="195,195">
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
-                                <Grid Margin="0,11,11,0" Background="#F4981F">
+                                <Grid Margin="0,11,11,0" Background="{Binding Color}">
                                     <Image Source="{Binding Image}" Stretch="None"></Image>
-                                    <TextBlock Foreground="White" VerticalAlignment="Bottom" FontSize="21" Margin="13,0,0,9" Text="{Binding Name}"></TextBlock>
+                                    <TextBlock Foreground="White" VerticalAlignment="Bottom" Style="{StaticResource PhoneTextTitle3Style}" Margin="9,0,0,6" Text="{Binding Name}"></TextBlock>
                                 </Grid>
                             </DataTemplate>
                         </phone:LongListSelector.ItemTemplate>
@@ -53,7 +53,7 @@
             <phone:PanoramaItem>
                 <phone:PanoramaItem.Header>
                     <Grid>
-                        <TextBlock FontSize="50" Text="Текстовый поиск"></TextBlock>
+                        <TextBlock FontSize="50" Foreground="#1BA1E2" Text="Текстовый поиск"></TextBlock>
                     </Grid>
                 </phone:PanoramaItem.Header>
                 <Grid Margin="14,-30,0,0">

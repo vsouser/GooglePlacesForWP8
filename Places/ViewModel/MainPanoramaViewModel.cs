@@ -27,5 +27,11 @@ namespace Places.ViewModel
                 SetProperty<ObservableCollection<GooglePlacesApi.Type>>(ref require, value);
             }
         }
+
+
+        public void Exit(Action onExitCallback)
+        {
+            onExitCallback();
+        }
     }
 }

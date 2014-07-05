@@ -23,3 +23,28 @@ C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bi
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\ru\System.Xml.XPath.resources.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\zh-Hans\System.Xml.XPath.resources.dll
 C:\Users\Tokarew\documents\visual studio 2012\Projects\Places\GooglePlacesApi\Bin\ARM\Debug\zh-Hant\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\GooglePlacesApi.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\GooglePlacesApi.pdb
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\HtmlAgilityPack.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\Newtonsoft.Json.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Extensions.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Primitives.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Xml.XPath.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\HtmlAgilityPack.pdb
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\HtmlAgilityPack.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\Newtonsoft.Json.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Extensions.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\System.Net.Http.Primitives.xml
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\de\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\es\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\fr\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\it\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\ja\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\ko\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\ru\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\zh-Hans\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Debug\zh-Hant\System.Xml.XPath.resources.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\ARM\Debug\GooglePlacesApi.dll
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\ARM\Debug\GooglePlacesApi.pdb

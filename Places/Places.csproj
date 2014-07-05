@@ -97,8 +97,17 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\GeoLocationError.xaml.cs">
+      <DependentUpon>GeoLocationError.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainPanorama.xaml.cs">
       <DependentUpon>MainPanorama.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NerbySimplySearch.xaml.cs">
+      <DependentUpon>NerbySimplySearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NetworkError.xaml.cs">
+      <DependentUpon>NetworkError.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlaceInfo.xaml.cs">
       <DependentUpon>PlaceInfo.xaml</DependentUpon>
@@ -109,7 +118,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\GeoLocationErrorViewModel.cs" />
     <Compile Include="ViewModel\MainPanoramaViewModel.cs" />
+    <Compile Include="ViewModel\NerbySimplySearchViewModel.cs" />
+    <Compile Include="ViewModel\NetworkErrorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -120,7 +132,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\GeoLocationError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPanorama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NerbySimplySearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NetworkError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,11 +162,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Aeroplane.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\AppBar\refresh.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Cell.png" />
+    <Content Include="Assets\ConnectionError.png" />
+    <Content Include="Assets\GeoLocation.png" />
+    <Content Include="Assets\GPSOff.png" />
+    <Content Include="Assets\Repeat.png" />
+    <Content Include="Assets\SearchPlaces.png" />
     <Content Include="Assets\Tiles\Icon\ATM.png" />
     <Content Include="Assets\Tiles\Icon\Bank.png" />
     <Content Include="Assets\Tiles\Icon\Bar.png" />
@@ -171,6 +202,8 @@
     <Content Include="Assets\Tiles\Icon\Police.png" />
     <Content Include="Assets\Tiles\Icon\Restaurant.png" />
     <Content Include="Assets\Tiles\Icon\Station.png" />
+    <Content Include="Assets\UserLocation.png" />
+    <Content Include="Assets\Wifi.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
