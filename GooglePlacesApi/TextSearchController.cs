@@ -17,7 +17,7 @@ namespace GooglePlacesApi
             this.query = query;
         }
 
-        public async Task<ObservableCollection<Place>> GetPlaces()
+        public override async Task<ObservableCollection<Place>> GetPlaces()
         {
             string url = String.Empty;
             if (String.IsNullOrEmpty(NextPageToken) == true)

@@ -214,5 +214,7 @@ namespace GooglePlacesApi
             var results = jObject["results"].ToString();
             return JsonConvert.DeserializeObject<List<Place>>(results, new PlaceConverter());
         }
+
+        public abstract Task<ObservableCollection<Place>> GetPlaces();
     }
 }

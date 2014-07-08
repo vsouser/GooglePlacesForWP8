@@ -3,6 +3,7 @@
     <AssemblyPart x:Name="Places" Source="Places.dll" />
     <AssemblyPart x:Name="GooglePlacesApi" Source="GooglePlacesApi.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="SlideView.Library" Source="SlideView.Library.dll" />
     <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
     <AssemblyPart x:Name="System.Net.Http" Source="System.Net.Http.dll" />
     <AssemblyPart x:Name="System.Net.Http.Primitives" Source="System.Net.Http.Primitives.dll" />

@@ -21,8 +21,8 @@ namespace Places.Pages
         {
             base.OnNavigatedTo(e);
             ContentPanel.DataContext = App.NerbySearchViewModel;
-            bool result = await App.NerbySearchViewModel.GetData(() => NavigationService.Navigate(new Uri("/Pages/GeoLocationError.xaml", UriKind.Relative)));
-            MessageBox.Show(result.ToString());
+            await App.NerbySearchViewModel.GetData(() => NavigationService.Navigate(new Uri("/Pages/GeoLocationError.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/ResultPage.xaml", UriKind.Relative)));
+            
         }
     }
 }

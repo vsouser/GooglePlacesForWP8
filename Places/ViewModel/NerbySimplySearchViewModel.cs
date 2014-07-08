@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GooglePlacesApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace Places.ViewModel
     {
         private string iconStatus;
         private GooglePlacesApi.Type selectType;
+        private NearbySearchController nerbySearch;
+        private GooglePlacesApi.Location location;
 
         public NerbySimplySearchViewModel(GooglePlacesApi.Type selectType)
         {
@@ -21,36 +24,56 @@ namespace Places.ViewModel
             navigationAction();
         }
 
-        public async Task<bool> GetData(Action geoLocationError)
+        public GooglePlacesApi.Location Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                SetProperty<GooglePlacesApi.Location>(ref location, value);
+            }
+        }
+
+        public async Task GetData(Action geoLocationError, Action navigateAction)
         {
             IconStatus = "/Assets/UserLocation.png";
 
             GooglePlacesApi.GeoLocationController geolocationController = new GooglePlacesApi.GeoLocationController();
 
-            GooglePlacesApi.Location location = new GooglePlacesApi.Location();
-
             try
             {
-                location = await geolocationController.GetLocation();
+                Location = await geolocationController.GetLocation();
        
             }
             catch
             {
                 geoLocationError();
-                return false;
             }
 
             IconStatus = "/Assets/SearchPlaces.png";
 
-            GooglePlacesApi.NearbySearchController nerbySearch = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "500", location.ApiFormat, true, "", "", selectType.Key, "", "");
+            NerbySearch = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "500", location.ApiFormat, true, "", "", selectType.Key, "", "");
 
-            await nerbySearch.GetPlaces();
+            await NerbySearch.GetPlaces();
 
-            return true;
+            navigateAction();
 
-     
         }
 
+
+        public NearbySearchController NerbySearch
+        {
+            get
+            {
+                return nerbySearch;
+            }
+            set
+            {
+                SetProperty<NearbySearchController>(ref nerbySearch, value);
+            }
+        }
 
         public string IconStatus
         {
