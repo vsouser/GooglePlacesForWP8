@@ -6,6 +6,8 @@ Processing file: C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin
 File C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\HtmlAgilityPack.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Microsoft.Phone.Controls.dll
 File C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Microsoft.Phone.Controls.dll is not in the compile filter. Skipping.
+Processing file: C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Microsoft.Phone.Controls.Toolkit.dll
+File C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Microsoft.Phone.Controls.Toolkit.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Newtonsoft.Json.dll
 File C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Newtonsoft.Json.dll is not in the compile filter. Skipping.
 Processing file: C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\MDIL\Places.dll

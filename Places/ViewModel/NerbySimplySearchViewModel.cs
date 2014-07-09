@@ -36,7 +36,7 @@ namespace Places.ViewModel
             }
         }
 
-        public async Task GetData(Action geoLocationError, Action navigateAction)
+        public async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction)
         {
             IconStatus = "/Assets/UserLocation.png";
 
@@ -54,11 +54,22 @@ namespace Places.ViewModel
 
             IconStatus = "/Assets/SearchPlaces.png";
 
-            NerbySearch = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "500", location.ApiFormat, true, "", "", selectType.Key, "", "");
+            try
+            {
 
-            await NerbySearch.GetPlaces();
+                NerbySearch = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "500", location.ApiFormat, true, "", "", selectType.Key, "", "");
 
-            navigateAction();
+                await NerbySearch.GetPlaces();
+
+                compliteAction();
+            }
+            catch (GooglePlacesApi.SearchPlacesException ex)
+            {
+                if (ex.Name == GooglePlacesApi.Status.ZERO_RESULTS)
+                {
+                    zeroResulAction();
+                }
+            }
 
         }
 

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -20,7 +21,7 @@
                 <Grid Margin="12,35,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Source="/Assets/Icon.png" Stretch="None" HorizontalAlignment="Left"></Image>
                     <TextBlock Foreground="#1BA1E2" Grid.Column="1" Margin="20,5,0,0" VerticalAlignment="Center" FontSize="70" Text="Поиск мест"></TextBlock>
@@ -34,7 +35,7 @@
                         <TextBlock FontSize="50" Foreground="#1BA1E2" Text="Поблизости"></TextBlock>
                     </Grid>
                 </phone:PanoramaItem.Header>
-                
+
                 <Grid Margin="13,-30,0,16">
                     <phone:LongListSelector x:Name="NerbyTile" Tap="NerbyTile_Tap" ItemsSource="{Binding Reqiure, Mode=OneWay}" LayoutMode="Grid" GridCellSize="195,195">
                         <phone:LongListSelector.ItemTemplate>
@@ -56,9 +57,26 @@
                         <TextBlock FontSize="50" Foreground="#1BA1E2" Text="Текстовый поиск"></TextBlock>
                     </Grid>
                 </phone:PanoramaItem.Header>
-                <Grid Margin="14,-30,0,0">
 
-                </Grid>
+                <ScrollViewer x:Name="scrollViewer" Margin="13,-30,0,16">
+                    <StackPanel>
+                        <TextBlock Margin="0,0,0,0" Text="Ключевая фраза"></TextBlock>
+                        <TextBox Height="75" Margin="-13,0,-13,0" BorderBrush="#FF1BA1E2" Background="White"></TextBox>
+                        <TextBlock Text="Радиус"></TextBlock>
+                        <toolkit:ListPicker Margin="0,0,0,0" Foreground="#1BA1E2" FontSize="20" ItemsSource="{Binding Radius, Mode=OneWay}" BorderBrush="#FF1BA1E2" Background="White">
+                            <toolkit:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Value, Mode=OneWay}" Foreground="Black" FontSize="20"></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </toolkit:ListPicker.ItemTemplate>
+                        </toolkit:ListPicker>
+                    </StackPanel>
+                </ScrollViewer>
+                <!--<Grid Margin="14,-30,0,0">
+                </Grid>-->
+
             </phone:PanoramaItem>
         </phone:Panorama>
     </Grid>

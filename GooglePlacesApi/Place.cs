@@ -1,6 +1,9 @@
-﻿using Newtonsoft.Json.Converters;
+﻿using Microsoft.Phone.Maps.Controls;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +22,7 @@ namespace GooglePlacesApi
         public List<Photo> Photos { get; set; }
         public string Price_level { get; set; }
         public string Rating { get; set; }
-        public string Reference { get; set;}
+        public string Reference { get; set; }
         public string[] Types { get; set; }
         public string Vicinity { get; set; }
         public string Formatted_address { get; set; }

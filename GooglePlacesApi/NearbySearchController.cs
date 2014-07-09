@@ -18,7 +18,7 @@ namespace GooglePlacesApi
         private string keyword;
         private string name;
         private string rankby;
-
+        
         public NearbySearchController(string key, string sensor, string language, string radius, string location, bool openNow, string minprice, string maxprice, string types, string keyword, string name, string rankby = "prominence")
             : base(key, sensor, language, radius, location, openNow, minprice, maxprice, types)
         {

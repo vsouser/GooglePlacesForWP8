@@ -93,6 +93,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ColorConverting.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -111,6 +112,9 @@
     </Compile>
     <Compile Include="Pages\ResultPage.xaml.cs">
       <DependentUpon>ResultPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ZeroResultError.xaml.cs">
+      <DependentUpon>ZeroResultError.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlaceInfo.xaml.cs">
       <DependentUpon>PlaceInfo.xaml</DependentUpon>
@@ -156,12 +160,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ZeroResultError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PlaceInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Navicat Premium.lnk" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>
@@ -182,7 +191,12 @@
     <Content Include="Assets\Data-Split-01.png" />
     <Content Include="Assets\GeoLocation.png" />
     <Content Include="Assets\GPSOff.png" />
+    <Content Include="Assets\Icon101.png" />
+    <Content Include="Assets\Icon202.png" />
+    <Content Include="Assets\Location.png" />
+    <Content Include="Assets\PlacePin.png" />
     <Content Include="Assets\Repeat.png" />
+    <Content Include="Assets\ResultError.png" />
     <Content Include="Assets\SearchPlaces.png" />
     <Content Include="Assets\Tiles\Icon\ATM.png" />
     <Content Include="Assets\Tiles\Icon\Bank.png" />
@@ -214,6 +228,12 @@
     <Content Include="Assets\Tiles\Icon\Station.png" />
     <Content Include="Assets\UserLocation.png" />
     <Content Include="Assets\Wifi.png" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -230,6 +250,9 @@
   <ItemGroup />
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="SlideView.Library">
       <HintPath>..\packages\SlideView.1.3.3\lib\wp8\SlideView.Library.dll</HintPath>
     </Reference>
