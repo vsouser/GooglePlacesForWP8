@@ -51,7 +51,11 @@ namespace Places.Pages
             var longitude = ((Pushpin)sender).GeoCoordinate.Longitude;
             var latitude = ((Pushpin)sender).GeoCoordinate.Latitude;
 
-            MessageBox.Show("Нажал");
+            App.ResultPageViewModel.FindPlace(latitude, longitude);
+
+            map.SetView(new GeoCoordinate() { Longitude = longitude, Latitude = latitude }, 19);
+
+            LayoutRoot.SelectedIndex = 2;
         }
 
         private async void More_Click(object sender, EventArgs e)

@@ -25,14 +25,24 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
- 
+
 
             <!--ContentPanel – поместите здесь дополнительное содержимое-->
             <Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,24,24,24">
-                <phone:LongListSelector Background="#1BA1E2" x:Name="Places" ItemsSource="{Binding SearchPlacesController.Places, Mode=TwoWay}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel x:Name="TitlePanel" Grid.Row="0"  Margin="-12,0,0,12">
+                    <TextBlock Text="Найденые места" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+                </StackPanel>
+
+                <phone:LongListSelector Background="#1BA1E2" Grid.Row="1" x:Name="Places" ItemsSource="{Binding SearchPlacesController.Places, Mode=TwoWay}">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" Margin="5,0,0,24">
+                            <StackPanel Orientation="Vertical" Margin="5,0,0,12">
                                 <TextBlock Text="{Binding Name, Mode=TwoWay}" Margin="12, 12, 12, 12" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" Foreground="White"></TextBlock>
                                 <TextBlock Text="{Binding Vicinity, Mode=TwoWay}" Margin="12, 0, 12, 12" FontWeight="Light" FontSize="22" TextWrapping="Wrap" Foreground="White"></TextBlock>
                             </StackPanel>
@@ -42,18 +52,47 @@
             </Grid>
         </Grid>
 
-        <Grid Background="#034888" Width="480">
+        <Grid Background="#034888" Width="520">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25"></ColumnDefinition>
-                <ColumnDefinition Width="450"></ColumnDefinition>
+                <ColumnDefinition Width="495"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Background="#1BA1E2">
                 <Image Source="/Assets/Data-Split-01.png" Width="25" Height="25" Stretch="Fill"></Image>
             </Grid>
-        
+
 
             <Controls:Map x:Name="map" Grid.Column="1">
             </Controls:Map>
+        </Grid>
+
+        <Grid Background="#034888" Width="480">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"></ColumnDefinition>
+                <ColumnDefinition Width="455"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="#DE9317">
+                <Image Source="/Assets/Data-Split-01.png" Width="25" Height="25" Stretch="Fill"></Image>
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="24,24,24,24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <TextBlock Text="{Binding SelectPlace.Name, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle1Style}" TextWrapping="Wrap" Margin="0,0,0,0"/>
+                            <TextBlock Text="Адрес" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
+                            <TextBlock Text="{Binding SelectPlace.Vicinity, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" Margin="0, 0, 12, 12" Foreground="#FFFFFF"></TextBlock>
+                            <TextBlock Text="Рэйтинг" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
+                            <TextBlock Text="{Binding SelectPlace.Rating, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" Margin="0, 0, 12, 12" Foreground="#FFFFFF"></TextBlock>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
         </Grid>
 
 
@@ -69,7 +108,7 @@
             </shell:ApplicationBar.Buttons>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-        
-  
-    
+
+
+
 </phone:PhoneApplicationPage>

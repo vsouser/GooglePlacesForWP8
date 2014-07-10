@@ -15,6 +15,7 @@ namespace Places.ViewModel
     {
         private NearbySearchController searchPlacesController;
         private GeoCoordinate userGeoCoordinate;
+        private Place selectPlace;
 
         public NearbySearchController SearchPlacesController
         {
@@ -38,7 +39,18 @@ namespace Places.ViewModel
             {
                 SetProperty<GeoCoordinate>(ref userGeoCoordinate, value);
             }
-                
+        }
+
+        public Place SelectPlace
+        {
+            get
+            {
+                return selectPlace;
+            }
+            set
+            {
+                SetProperty<Place>(ref selectPlace, value);
+            }
         }
 
         public MapLayer CreateLocationPlaces()
@@ -74,6 +86,15 @@ namespace Places.ViewModel
             }
 
             return unitsLayer;
+        }
+
+        public void FindPlace(double lat, double lng)
+        {
+            var query = from place in searchPlacesController.Places
+                        where place.Geometry.Location.Lat == lat && place.Geometry.Location.Lng == lng
+                        select place;
+
+            SelectPlace = query.FirstOrDefault();
         }
 
         public ResultPageViewModel(NearbySearchController searchPlacesController, GooglePlacesApi.Location location)

@@ -47,8 +47,9 @@ namespace Places.ViewModel
                 Location = await geolocationController.GetLocation();
        
             }
-            catch
+            catch(Exception ex)
             {
+        
                 geoLocationError();
             }
 
@@ -69,6 +70,10 @@ namespace Places.ViewModel
                 {
                     zeroResulAction();
                 }
+            }
+            catch (NullReferenceException)
+            {
+                geoLocationError();
             }
 
         }

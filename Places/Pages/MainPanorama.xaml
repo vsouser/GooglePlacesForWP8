@@ -74,8 +74,7 @@
                         </toolkit:ListPicker>
                     </StackPanel>
                 </ScrollViewer>
-                <!--<Grid Margin="14,-30,0,0">
-                </Grid>-->
+        
 
             </phone:PanoramaItem>
         </phone:Panorama>
