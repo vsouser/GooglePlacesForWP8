@@ -36,19 +36,26 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel x:Name="TitlePanel" Grid.Row="0"  Margin="-12,0,0,12">
-                    <TextBlock Text="Найденые места" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+                    <TextBlock Text="Найденые места" Foreground="White" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
                 </StackPanel>
 
-                <phone:LongListSelector Background="#1BA1E2" Grid.Row="1" x:Name="Places" ItemsSource="{Binding SearchPlacesController.Places, Mode=TwoWay}">
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="85"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <toolkit:PhoneTextBox x:Name="LocalSearhc" TextChanged="LocalSearhc_TextChanged"  Grid.Row="0" Margin="-12,0" BorderBrush="#FF1BA1E2" Background="White" Foreground="Black" ActionIcon="/Assets/Search.png" Style="{StaticResource PhoneTextBoxStyle1}" />
+                    <phone:LongListSelector Background="#1BA1E2" Grid.Row="1"  x:Name="Places" ItemsSource="{Binding Places, Mode=TwoWay}">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" Margin="5,0,0,12">
+                            <StackPanel Orientation="Vertical" Margin="8,0,0,5">
                                 <TextBlock Text="{Binding Name, Mode=TwoWay}" Margin="12, 12, 12, 12" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" Foreground="White"></TextBlock>
                                 <TextBlock Text="{Binding Vicinity, Mode=TwoWay}" Margin="12, 0, 12, 12" FontWeight="Light" FontSize="22" TextWrapping="Wrap" Foreground="White"></TextBlock>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
+                </Grid>
             </Grid>
         </Grid>
 
@@ -84,11 +91,13 @@
                 <Grid Grid.Row="1">
                     <ScrollViewer>
                         <StackPanel>
-                            <TextBlock Text="{Binding SelectPlace.Name, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle1Style}" TextWrapping="Wrap" Margin="0,0,0,0"/>
+                            <TextBlock Text="{Binding SelectPlace.Name, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" TextWrapping="Wrap" Margin="0,0,0,0"/>
                             <TextBlock Text="Адрес" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
                             <TextBlock Text="{Binding SelectPlace.Vicinity, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" Margin="0, 0, 12, 12" Foreground="#FFFFFF"></TextBlock>
                             <TextBlock Text="Рэйтинг" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
-                            <TextBlock Text="{Binding SelectPlace.Rating, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" Margin="0, 0, 12, 12" Foreground="#FFFFFF"></TextBlock>
+                            <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" Value="{Binding SelectPlace.Rating, Mode=TwoWay}"></toolkit:Rating>
+                            <TextBlock Text="Расстояние КМ" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
+                            <TextBlock Text="{Binding DistancePlace, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" Margin="0, 0, 12, 12" Foreground="#FFFFFF"></TextBlock>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

@@ -58,7 +58,7 @@ namespace Places.ViewModel
             try
             {
 
-                NerbySearch = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "500", location.ApiFormat, true, "", "", selectType.Key, "", "");
+                NerbySearch = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", location.ApiFormat, true, "", "", selectType.Key, "", "");
 
                 await NerbySearch.GetPlaces();
 

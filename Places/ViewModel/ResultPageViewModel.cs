@@ -8,6 +8,7 @@ using System.Device.Location;
 using Microsoft.Phone.Maps.Controls;
 using Microsoft.Phone.Maps.Toolkit;
 using System.Windows;
+using System.Collections.ObjectModel;
 
 namespace Places.ViewModel
 {
@@ -16,7 +17,21 @@ namespace Places.ViewModel
         private NearbySearchController searchPlacesController;
         private GeoCoordinate userGeoCoordinate;
         private Place selectPlace;
+        private string distancePlace;
+        protected ObservableCollection<Place> places = new ObservableCollection<Place>();
 
+        public ObservableCollection<Place> Places
+        {
+            get
+            {
+                return places;
+            }
+            set
+            {
+                SetProperty<ObservableCollection<Place>>(ref places, value);
+            }
+        }
+ 
         public NearbySearchController SearchPlacesController
         {
             get
@@ -50,6 +65,18 @@ namespace Places.ViewModel
             set
             {
                 SetProperty<Place>(ref selectPlace, value);
+            }
+        }
+
+        public string DistancePlace
+        {
+            get
+            {
+                return distancePlace;
+            }
+            set
+            {
+                SetProperty<string>(ref distancePlace, value);
             }
         }
 
@@ -88,6 +115,27 @@ namespace Places.ViewModel
             return unitsLayer;
         }
 
+        public void LocalSearchPlace(string text)
+        {
+            GetCurrentPlaces();
+
+            var criteria = Places.Where(f => f.Name.Contains(text) == true);
+
+            Places = new ObservableCollection<Place>(criteria);
+           
+        }
+
+        public async Task GetMorePlaces()
+        {
+           await SearchPlacesController.GetPlaces();
+           Places = SearchPlacesController.Places;
+        }
+
+        public void GetCurrentPlaces()
+        {
+            Places = SearchPlacesController.Places;
+        }
+
         public void FindPlace(double lat, double lng)
         {
             var query = from place in searchPlacesController.Places
@@ -95,12 +143,17 @@ namespace Places.ViewModel
                         select place;
 
             SelectPlace = query.FirstOrDefault();
+
+            DistancePlace = Helpers.DistanceCalculate.Calculate(UserGeoCoordinate.Latitude, UserGeoCoordinate.Longitude, lat, lng).ToString("0.000"); 
+        
+        
         }
 
         public ResultPageViewModel(NearbySearchController searchPlacesController, GooglePlacesApi.Location location)
         {
             this.searchPlacesController = searchPlacesController;
-            UserGeoCoordinate = new GeoCoordinate() { Latitude = location.Lat, Longitude = location.Lng};          
+            UserGeoCoordinate = new GeoCoordinate() { Latitude = location.Lat, Longitude = location.Lng};
+            GetCurrentPlaces();
         }
     }
 }

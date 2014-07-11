@@ -94,6 +94,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ColorConverting.cs" />
+    <Compile Include="Helpers\DistanceCalculate.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -170,7 +171,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Navicat Premium.lnk" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>
@@ -197,6 +197,7 @@
     <Content Include="Assets\PlacePin.png" />
     <Content Include="Assets\Repeat.png" />
     <Content Include="Assets\ResultError.png" />
+    <Content Include="Assets\Search.png" />
     <Content Include="Assets\SearchPlaces.png" />
     <Content Include="Assets\Tiles\Icon\ATM.png" />
     <Content Include="Assets\Tiles\Icon\Bank.png" />

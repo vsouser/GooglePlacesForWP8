@@ -53,14 +53,14 @@ namespace Places.Pages
 
             App.ResultPageViewModel.FindPlace(latitude, longitude);
 
-            map.SetView(new GeoCoordinate() { Longitude = longitude, Latitude = latitude }, 19);
+           // map.SetView(new GeoCoordinate() { Longitude = longitude, Latitude = latitude }, 19);
 
             LayoutRoot.SelectedIndex = 2;
         }
 
         private async void More_Click(object sender, EventArgs e)
         {
-            await App.ResultPageViewModel.SearchPlacesController.GetPlaces();
+            await App.ResultPageViewModel.GetMorePlaces();
 
             map.Layers.Clear();
 
@@ -82,6 +82,12 @@ namespace Places.Pages
         {
             base.OnBackKeyPress(e);
             NavigationService.Navigate(new Uri("/Pages/MainPanorama.xaml", UriKind.Relative));
+        }
+
+        private void LocalSearhc_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var text = ((TextBox)sender).Text;
+            App.ResultPageViewModel.LocalSearchPlace(text);
         }
 
     }
