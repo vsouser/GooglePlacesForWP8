@@ -38,15 +38,18 @@ namespace Places.Pages
 
         private void NerbyTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            GooglePlacesApi.Type types = ((GooglePlacesApi.Type)NerbyTile.SelectedItem);
-            if (types.Key == GooglePlacesApi.Types.OTHER)
+            if (NerbyTile.SelectedItem != null)
             {
-                MessageBox.Show("Полный поиск");
-            }
-            else
-            {
-                App.NerbySearchViewModel = new NerbySimplySearchViewModel(types);
-                App.NerbySearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/NerbySimplySearch.xaml", UriKind.Relative)));
+                GooglePlacesApi.Type types = ((GooglePlacesApi.Type)NerbyTile.SelectedItem);
+                if (types.Key == GooglePlacesApi.Types.OTHER)
+                {
+                    MessageBox.Show("Полный поиск");
+                }
+                else
+                {
+                    App.NerbySearchViewModel = new NerbySimplySearchViewModel(types);
+                    App.NerbySearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/NerbySimplySearch.xaml", UriKind.Relative)));
+                }
             }
         }
 

@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Helpers\ColorConverting.cs" />
     <Compile Include="Helpers\DistanceCalculate.cs" />
+    <Compile Include="Helpers\OpenNowConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -187,6 +188,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Cell.png" />
+    <Content Include="Assets\Closed.png" />
     <Content Include="Assets\ConnectionError.png" />
     <Content Include="Assets\Data-Split-01.png" />
     <Content Include="Assets\GeoLocation.png" />
@@ -194,6 +196,7 @@
     <Content Include="Assets\Icon101.png" />
     <Content Include="Assets\Icon202.png" />
     <Content Include="Assets\Location.png" />
+    <Content Include="Assets\Open.png" />
     <Content Include="Assets\PlacePin.png" />
     <Content Include="Assets\Repeat.png" />
     <Content Include="Assets\ResultError.png" />

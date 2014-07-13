@@ -4,6 +4,7 @@
     xmlns:my="clr-namespace:Microsoft.Phone.Maps.Toolkit;assembly=Microsoft.Phone.Controls.Toolkit" 
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:utils ="clr-namespace:Places.Helpers"
     x:Class="Places.App"
     >
 
@@ -11,7 +12,58 @@
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:Places" x:Key="LocalizedStrings"/>
 
-        <Style TargetType="my:Pushpin" x:Key="LocationPinStyle">
+
+        <Style x:Name="UnfilledRattingStyle" TargetType="toolkit:RatingItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:RatingItem">
+                        <Border HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock FontSize="34" Foreground="#FF99B5CF">♡</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style x:Name="FilledRattingStyle" TargetType="toolkit:RatingItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:RatingItem">
+                        <Border HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock FontSize="34" Foreground="White">♡</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Name="UnfilledDollarStyle" TargetType="toolkit:RatingItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:RatingItem">
+                        <Border HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock FontSize="34" Foreground="#FF99B5CF">$</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style x:Name="FilledDollarStyle" TargetType="toolkit:RatingItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:RatingItem">
+                        <Border HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <TextBlock FontSize="34" Foreground="White">$</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <utils:OpenNowConverter x:Key="OpenNowConverter"></utils:OpenNowConverter>
+
+            <Style TargetType="my:Pushpin" x:Key="LocationPinStyle">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="my:Pushpin">

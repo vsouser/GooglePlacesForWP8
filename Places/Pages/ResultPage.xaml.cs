@@ -53,7 +53,7 @@ namespace Places.Pages
 
             App.ResultPageViewModel.FindPlace(latitude, longitude);
 
-           // map.SetView(new GeoCoordinate() { Longitude = longitude, Latitude = latitude }, 19);
+            map.SetView(new GeoCoordinate() { Longitude = longitude, Latitude = latitude }, 17);
 
             LayoutRoot.SelectedIndex = 2;
         }
@@ -88,6 +88,20 @@ namespace Places.Pages
         {
             var text = ((TextBox)sender).Text;
             App.ResultPageViewModel.LocalSearchPlace(text);
+        }
+
+        private void Places_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (Places.SelectedItem != null)
+            {
+                var selectedPlave = (GooglePlacesApi.Place)Places.SelectedItem;
+
+                App.ResultPageViewModel.FindPlace(selectedPlave.Geometry.Location.Lat, selectedPlave.Geometry.Location.Lng);
+
+                map.SetView(new GeoCoordinate() { Longitude = selectedPlave.Geometry.Location.Lng, Latitude = selectedPlave.Geometry.Location.Lat }, 17);
+
+                LayoutRoot.SelectedIndex = 2;
+            }
         }
 
     }
