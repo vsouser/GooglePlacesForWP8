@@ -11,6 +11,7 @@ using System.Device.Location;
 using Microsoft.Phone.Maps.Toolkit;
 using Microsoft.Phone.Maps.Controls;
 using System.Windows.Media;
+using Microsoft.Phone.Tasks;
 
 namespace Places.Pages
 {
@@ -35,6 +36,11 @@ namespace Places.Pages
             else
             {
                 ApplicationBar.IsVisible = false;
+            }
+
+            if (App.ResultPageViewModel.SelectPlace == null)
+            {
+                LayoutRoot.SelectedIndex = 0;
             }
 
 
@@ -102,6 +108,26 @@ namespace Places.Pages
 
                 LayoutRoot.SelectedIndex = 2;
             }
+        }
+
+        private void Map_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            LayoutRoot.SelectedIndex = 1;
+        }
+
+        private void Route_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            MapsDirectionsTask direction = new MapsDirectionsTask();
+
+            LabeledMapLocation startLabeled = new LabeledMapLocation("Ваше местоположение", App.ResultPageViewModel.UserGeoCoordinate);
+
+            direction.Start = startLabeled;
+
+            LabeledMapLocation endLabeled = new LabeledMapLocation(App.ResultPageViewModel.SelectPlace.Name, new GeoCoordinate(App.ResultPageViewModel.SelectPlace.Geometry.Location.Lat, App.ResultPageViewModel.SelectPlace.Geometry.Location.Lng));
+
+            direction.End = endLabeled;
+
+            direction.Show();
         }
 
     }

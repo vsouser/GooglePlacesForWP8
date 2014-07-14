@@ -29,7 +29,14 @@ namespace Places.Helpers
             }
             else
             {
-                return "//Assets//Closed.png";
+                var filename = "Assets/Closed.png";
+
+                Uri uri = new Uri(filename, UriKind.Relative);
+                StreamResourceInfo resourceInfo = Application.GetResourceStream(uri);
+                BitmapImage bmp = new BitmapImage();
+                bmp.SetSource(resourceInfo.Stream);
+
+                return bmp;
             }
 
         }

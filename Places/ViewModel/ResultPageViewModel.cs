@@ -14,7 +14,7 @@ namespace Places.ViewModel
 {
     public class ResultPageViewModel : GooglePlacesApi.NotifyPropertyBase
     {
-        private NearbySearchController searchPlacesController;
+        private SearchPlacesController searchPlacesController;
         private GeoCoordinate userGeoCoordinate;
         private Place selectPlace;
         private string distancePlace;
@@ -31,8 +31,8 @@ namespace Places.ViewModel
                 SetProperty<ObservableCollection<Place>>(ref places, value);
             }
         }
- 
-        public NearbySearchController SearchPlacesController
+
+        public SearchPlacesController SearchPlacesController
         {
             get
             {
@@ -40,7 +40,7 @@ namespace Places.ViewModel
             }
             set
             {
-                SetProperty<NearbySearchController>(ref searchPlacesController, value);
+                SetProperty<SearchPlacesController>(ref searchPlacesController, value);
             }
         }
 
@@ -149,7 +149,7 @@ namespace Places.ViewModel
         
         }
 
-        public ResultPageViewModel(NearbySearchController searchPlacesController, GooglePlacesApi.Location location)
+        public ResultPageViewModel(SearchPlacesController searchPlacesController, GooglePlacesApi.Location location)
         {
             this.searchPlacesController = searchPlacesController;
             UserGeoCoordinate = new GeoCoordinate() { Latitude = location.Lat, Longitude = location.Lng};

@@ -54,7 +54,6 @@ C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\Syst
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\ARM\Release\System.Net.Http.Primitives.xml
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Places.csprojResolveAssemblyReference.cache
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\App.g.cs
-C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\MainPage.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\GeoLocationError.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\MainPanorama.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\NerbySimplySearch.g.cs

@@ -14,7 +14,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="False">    
+    shell:SystemTray.IsVisible="False">
 
     <controls:SlideView x:Name="LayoutRoot" >
         <Grid Background="#034888"
@@ -40,16 +40,16 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <toolkit:PhoneTextBox x:Name="LocalSearhc" TextChanged="LocalSearhc_TextChanged"  Grid.Row="0" Margin="-12,0" BorderBrush="#FF1BA1E2" Background="White" Foreground="Black" ActionIcon="/Assets/Search.png" Style="{StaticResource PhoneTextBoxStyle1}" />
-                    <phone:LongListSelector Tap="Places_Tap" Background="#1BA1E2" Grid.Row="1"  x:Name="Places" ItemsSource="{Binding Places, Mode=TwoWay}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical" Margin="8,0,0,5">
-                                <TextBlock Text="{Binding Name, Mode=TwoWay}" Margin="12, 12, 12, 12" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" Foreground="White"></TextBlock>
-                                <TextBlock Text="{Binding Vicinity, Mode=TwoWay}" Margin="12, 0, 12, 12" FontWeight="Light" FontSize="22" TextWrapping="Wrap" Foreground="White"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
+                    <phone:LongListSelector Tap="Places_Tap" Background="#1BA1E2" Grid.Row="1"  x:Name="Places" ItemsSource="{Binding Places, Mode=TwoWay}" Style="{StaticResource LongListSelectorStyle1}">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="8,0,0,5">
+                                    <TextBlock Text="{Binding Name, Mode=TwoWay}" Margin="12, 12, 12, 12" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                                    <TextBlock Text="{Binding Vicinity, Mode=TwoWay}" Margin="12, 0, 12, 12" FontWeight="Light" FontSize="22" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
                 </Grid>
             </Grid>
         </Grid>
@@ -86,6 +86,18 @@
                     <ScrollViewer>
                         <StackPanel>
                             <TextBlock Text="{Binding SelectPlace.Name, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" TextWrapping="Wrap" Margin="0,0,0,0"/>
+                            <toolkit:WrapPanel Margin="-12, 12, 12, 0">
+                                <Button x:Name="Map" Tap="Map_Tap" Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
+                                    <Button.Content>
+                                        <Image Source="/Assets/Map.png"></Image>
+                                    </Button.Content>
+                                </Button>
+                                <Button x:Name="Route" Tap="Route_Tap" Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
+                                    <Button.Content>
+                                        <Image Source="/Assets/Way-Board.png"></Image>
+                                    </Button.Content>
+                                </Button>
+                            </toolkit:WrapPanel>
                             <TextBlock Text="Адрес" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
                             <TextBlock Text="{Binding SelectPlace.Vicinity, Mode=TwoWay}" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" Margin="0, 0, 12, 12" Foreground="#FFFFFF"></TextBlock>
                             <TextBlock Text="Расстояние КМ" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
@@ -94,9 +106,9 @@
                             <Image HorizontalAlignment="Left" Source="{Binding SelectPlace.Opening_hours.Open_now, Mode=TwoWay, Converter={StaticResource OpenNowConverter}}" Margin="-12, 12, 12, 0" Width="128" Height="128" Stretch="Fill"></Image>
                             <TextBlock Text="Рэйтинг" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
                             <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledRattingStyle}" FilledItemStyle="{StaticResource FilledRattingStyle}" Value="{Binding SelectPlace.Rating, Mode=TwoWay}"></toolkit:Rating>
-                             <TextBlock Text="Уровень цен" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
+                            <TextBlock Text="Уровень цен" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
                             <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledDollarStyle}" FilledItemStyle="{StaticResource FilledDollarStyle}" Value="{Binding SelectPlace.Price_level, Mode=TwoWay}" />
-                      </StackPanel>
+                        </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </Grid>

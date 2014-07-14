@@ -97,9 +97,6 @@
     <Compile Include="Helpers\DistanceCalculate.cs" />
     <Compile Include="Helpers\OpenNowConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\GeoLocationError.xaml.cs">
       <DependentUpon>GeoLocationError.xaml</DependentUpon>
     </Compile>
@@ -138,10 +135,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\GeoLocationError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +189,7 @@
     <Content Include="Assets\Icon101.png" />
     <Content Include="Assets\Icon202.png" />
     <Content Include="Assets\Location.png" />
+    <Content Include="Assets\Map.png" />
     <Content Include="Assets\Open.png" />
     <Content Include="Assets\PlacePin.png" />
     <Content Include="Assets\Repeat.png" />
@@ -231,6 +225,8 @@
     <Content Include="Assets\Tiles\Icon\Restaurant.png" />
     <Content Include="Assets\Tiles\Icon\Station.png" />
     <Content Include="Assets\UserLocation.png" />
+    <Content Include="Assets\View-Details.png" />
+    <Content Include="Assets\Way-Board.png" />
     <Content Include="Assets\Wifi.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />

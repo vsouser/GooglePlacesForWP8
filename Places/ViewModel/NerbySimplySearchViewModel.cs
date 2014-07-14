@@ -11,7 +11,7 @@ namespace Places.ViewModel
     {
         private string iconStatus;
         private GooglePlacesApi.Type selectType;
-        private NearbySearchController nerbySearch;
+        private SearchPlacesController nerbySearch;
         private GooglePlacesApi.Location location;
 
         public NerbySimplySearchViewModel(GooglePlacesApi.Type selectType)
@@ -79,7 +79,7 @@ namespace Places.ViewModel
         }
 
 
-        public NearbySearchController NerbySearch
+        public SearchPlacesController NerbySearch
         {
             get
             {
@@ -87,7 +87,7 @@ namespace Places.ViewModel
             }
             set
             {
-                SetProperty<NearbySearchController>(ref nerbySearch, value);
+                SetProperty<SearchPlacesController>(ref nerbySearch, value);
             }
         }
 
