@@ -85,7 +85,9 @@
   <ItemGroup>
     <Compile Include="AddressComponents.cs" />
     <Compile Include="Aspect.cs" />
+    <Compile Include="BaseMultiSelect.cs" />
     <Compile Include="EnglishTypesCreator.cs" />
+    <Compile Include="IMultiSelect.cs" />
     <Compile Include="RussiaTypesCreator.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="GeoLocationController.cs" />

@@ -93,9 +93,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Collections\LongListSelector.cs" />
+    <Compile Include="Helpers\Collections\MultiSelectCollection.cs" />
     <Compile Include="Helpers\ColorConverting.cs" />
     <Compile Include="Helpers\DistanceCalculate.cs" />
     <Compile Include="Helpers\OpenNowConverter.cs" />
+    <Compile Include="Helpers\PriceLevelConverter.cs" />
+    <Compile Include="Helpers\RatingLevelConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Pages\GeoLocationError.xaml.cs">
       <DependentUpon>GeoLocationError.xaml</DependentUpon>
@@ -247,7 +251,9 @@
       <Name>GooglePlacesApi</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">

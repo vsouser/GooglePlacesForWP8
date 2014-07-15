@@ -81,7 +81,8 @@ namespace Places
             TypesContoller = new TypesController(LanguageController.GetGooglePlacesLanguage());
             TypesContoller.Instance();
 
-            App.MainPanoramaViewModel = new MainPanoramaViewModel(TypesContoller.Require);
+            TypesContoller.Types.Sort();
+            App.MainPanoramaViewModel = new MainPanoramaViewModel(TypesContoller.Require, TypesContoller.Types);
             App.NetworkErrorViewModel = new NetworkErrorViewModel();
             App.GeoLocationErrorViewModel = new GeoLocationErrorViewModel();
         }

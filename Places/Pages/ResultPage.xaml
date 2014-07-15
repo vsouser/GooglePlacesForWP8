@@ -105,9 +105,9 @@
                             <TextBlock Text="Открыто сейчас" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
                             <Image HorizontalAlignment="Left" Source="{Binding SelectPlace.Opening_hours.Open_now, Mode=TwoWay, Converter={StaticResource OpenNowConverter}}" Margin="-12, 12, 12, 0" Width="128" Height="128" Stretch="Fill"></Image>
                             <TextBlock Text="Рэйтинг" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
-                            <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledRattingStyle}" FilledItemStyle="{StaticResource FilledRattingStyle}" Value="{Binding SelectPlace.Rating, Mode=TwoWay}"></toolkit:Rating>
+                            <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledRattingStyle}" FilledItemStyle="{StaticResource FilledRattingStyle}" Value="{Binding SelectPlace.Rating, Mode=TwoWay, Converter={StaticResource RatingLevelConverter}}"></toolkit:Rating>
                             <TextBlock Text="Уровень цен" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap" Margin="0, 12, 12, 0" Foreground="#DE9317"></TextBlock>
-                            <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledDollarStyle}" FilledItemStyle="{StaticResource FilledDollarStyle}" Value="{Binding SelectPlace.Price_level, Mode=TwoWay}" />
+                            <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="0, 12, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledDollarStyle}" FilledItemStyle="{StaticResource FilledDollarStyle}" Value="{Binding SelectPlace.Price_level, Mode=TwoWay, Converter={StaticResource PriceLevelConverter}}" />
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:list="clr-namespace:Places.Helpers.Collections"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -58,23 +59,36 @@
                     </Grid>
                 </phone:PanoramaItem.Header>
 
-                <ScrollViewer x:Name="scrollViewer" Margin="13,-30,0,16">
-                    <StackPanel>
-                        <TextBlock Margin="0,0,0,0" Foreground="White" Text="Ключевая фраза"></TextBlock>
-                        <TextBox Height="75" Margin="-13,0,-13,0" BorderBrush="#FF1BA1E2" Background="White" Style="{StaticResource TextBoxStyle1}"></TextBox>
-                        <TextBlock Text="Радиус" Foreground="White"></TextBlock>
-                        <toolkit:ListPicker Margin="0,0,0,0" Foreground="#1BA1E2" FontSize="20" ItemsSource="{Binding Radius, Mode=OneWay}" BorderBrush="#FF1BA1E2" Background="White" Template="{StaticResource ListPickerControlTemplate1}">
-                            <toolkit:ListPicker.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <TextBlock Text="{Binding Value, Mode=OneWay}" Foreground="Black" FontSize="20"></TextBlock>
-                                    </Grid>
-                                </DataTemplate>
-                            </toolkit:ListPicker.ItemTemplate>
-                        </toolkit:ListPicker>
-                    </StackPanel>
-                </ScrollViewer>
-        
+                <StackPanel Margin="13,-30,0,16">
+                    <TextBlock Margin="0,0,0,0" Foreground="White" Text="Ключевая фраза*"></TextBlock>
+                    <TextBox Height="75" Margin="-13,0,-13,0" BorderBrush="#FF1BA1E2" Background="White" Style="{StaticResource TextBoxStyle1}" InputScope="PersonalSurname"></TextBox>
+                    <TextBlock Text="Радиус(метров)*" Foreground="White"></TextBlock>
+                    <toolkit:ListPicker Margin="0,0,0,0" Foreground="#1BA1E2" FontSize="20" ItemsSource="{Binding Radius, Mode=OneWay}" BorderBrush="#FF1BA1E2" Background="White" Template="{StaticResource ListPickerControlTemplate1}">
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding Value, Mode=OneWay}" Foreground="Black" FontSize="20"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+                    <TextBlock Text="Тип" Margin="0,10,0,5" Foreground="White"></TextBlock>
+
+                    <list:LongListSelector Height="280" x:Name="Items" ItemsSource="{Binding All.Items, Mode=TwoWay}">
+                        <list:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="-10,0,0,-20" Orientation="Horizontal">
+                                    <CheckBox BorderBrush="White" Foreground="White" Content="{Binding Name, Mode=TwoWay}" IsChecked="{Binding Select, Mode=TwoWay}" Style="{StaticResource CheckBoxStyle1}"></CheckBox>
+                                </StackPanel>
+                            </DataTemplate>
+                        </list:LongListSelector.ItemTemplate>
+                    </list:LongListSelector>
+
+                    <Button Height="75" Width="429" Margin="-10,0,0,0"   BorderBrush="White" Foreground="White" Background="#FFDE9317" Content="Найти"></Button>
+
+                </StackPanel>
+
+
 
             </phone:PanoramaItem>
         </phone:Panorama>
