@@ -12,6 +12,8 @@ namespace GooglePlacesApi
 {
     public class Place
     {
+        private string visinity;
+
         public List<Event> Events { get; set; }
         public string Icon { get; set; }
         public string Id { get; set; }
@@ -24,7 +26,26 @@ namespace GooglePlacesApi
         public string Rating { get; set; }
         public string Reference { get; set; }
         public string[] Types { get; set; }
-        public string Vicinity { get; set; }
+        public string Vicinity
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(visinity))
+                {
+                    return Formatted_address;
+                }
+                else
+                {
+                    return visinity;
+                }
+            }
+            set
+            {
+                visinity = value;
+            }
+
+
+        }
         public string Formatted_address { get; set; }
     }
 

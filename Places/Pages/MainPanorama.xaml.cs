@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Places.ViewModel;
 using Microsoft.Phone.Net.NetworkInformation;
+using GooglePlacesApi;
 
 namespace Places.Pages
 {
@@ -63,6 +64,20 @@ namespace Places.Pages
                         NavigationService.RemoveBackEntry();
                     }
                 });
+        }
+
+        private void Search_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            string query = Query.Text;
+            string radius = ((Radius)Radius.SelectedItem).Value.ToString();
+
+            //MessageBox.Show(query + radius);
+
+            App.NerbySearchViewModel = new TextSearchViewModel(query, radius);
+            App.NerbySearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/NerbySimplySearch.xaml", UriKind.Relative)));
+           // TextSearchController textSearhcController = new TextSearchController(Query.Text, 
+
+            //textSearhcController
         }
     }
 }

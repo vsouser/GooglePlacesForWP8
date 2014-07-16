@@ -26,7 +26,7 @@ namespace Places.Pages
         {
             base.OnNavigatedTo(e);
 
-            App.ResultPageViewModel = new ViewModel.ResultPageViewModel(App.NerbySearchViewModel.NerbySearch, App.NerbySearchViewModel.Location);
+            App.ResultPageViewModel = new ViewModel.ResultPageViewModel(App.NerbySearchViewModel.SearchController, App.NerbySearchViewModel.Location);
             LayoutRoot.DataContext = App.ResultPageViewModel;
 
             if (App.ResultPageViewModel.SearchPlacesController.IsNextPage == true)

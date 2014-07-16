@@ -1,5 +1,4 @@
-﻿using GooglePlacesApi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Places.ViewModel
 {
-    public class NerbySimplySearchViewModel : BaseSearchViewModel
+    public class TextSearchViewModel : BaseSearchViewModel
     {
-        private GooglePlacesApi.Type selectType;
-        
+        private string query;
+        private string radius;
 
-        public NerbySimplySearchViewModel(GooglePlacesApi.Type selectType)
+
+        public TextSearchViewModel(string query, string radius)
         {
-            this.selectType = selectType;
+            this.query = query;
+            this.radius = radius;
         }
 
         public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction)
@@ -26,11 +27,11 @@ namespace Places.ViewModel
             try
             {
                 Location = await geolocationController.GetLocation();
-       
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-        
+
                 geoLocationError();
             }
 
@@ -39,8 +40,9 @@ namespace Places.ViewModel
             try
             {
 
-                SearchController = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", Location.ApiFormat, true, "", "", selectType.Key, "", "");
-
+               // SearchController = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", location.ApiFormat, true, "", "", selectType.Key, "", "");
+                SearchController = new GooglePlacesApi.TextSearchController(query, App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, radius, Location.ApiFormat, App.LanguageController.GetGooglePlacesLanguage(), true, "", "");
+                
                 await SearchController.GetPlaces();
 
                 compliteAction();
@@ -57,5 +59,8 @@ namespace Places.ViewModel
                 geoLocationError();
             }
         }
+
+
+
     }
 }

@@ -23,7 +23,7 @@ namespace Places
         public static MainPanoramaViewModel MainPanoramaViewModel { get; set; }
         public static NetworkErrorViewModel NetworkErrorViewModel { get; set; }
         public static ResultPageViewModel ResultPageViewModel { get; set; }
-        public static NerbySimplySearchViewModel NerbySearchViewModel { get; set; }
+        public static BaseSearchViewModel NerbySearchViewModel { get; set; }
         public static GeoLocationErrorViewModel GeoLocationErrorViewModel { get; set; }
 
         public static Place SelectPlace { get; set; }

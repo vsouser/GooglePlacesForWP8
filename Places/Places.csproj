@@ -128,11 +128,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BaseSearchViewModel.cs" />
     <Compile Include="ViewModel\GeoLocationErrorViewModel.cs" />
     <Compile Include="ViewModel\MainPanoramaViewModel.cs" />
     <Compile Include="ViewModel\NerbySimplySearchViewModel.cs" />
     <Compile Include="ViewModel\NetworkErrorViewModel.cs" />
     <Compile Include="ViewModel\ResultPageViewModel.cs" />
+    <Compile Include="ViewModel\TextSearchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
