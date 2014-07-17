@@ -71,13 +71,18 @@ namespace Places.Pages
             string query = Query.Text;
             string radius = ((Radius)Radius.SelectedItem).Value.ToString();
 
-            //MessageBox.Show(query + radius);
+            App.MainPanoramaViewModel.ValidateQuery(query, Query);
 
-            App.NerbySearchViewModel = new TextSearchViewModel(query, radius);
-            App.NerbySearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/NerbySimplySearch.xaml", UriKind.Relative)));
-           // TextSearchController textSearhcController = new TextSearchController(Query.Text, 
+            if (App.MainPanoramaViewModel.HasTextSearch == true)
+            {
+                App.NerbySearchViewModel = new TextSearchViewModel(query, radius);
+                App.NerbySearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/NerbySimplySearch.xaml", UriKind.Relative)));
+            }
+        }
 
-            //textSearhcController
+        private void Query_GotFocus(object sender, RoutedEventArgs e)
+        {
+            App.MainPanoramaViewModel.QueryBoxDefault(Query);
         }
     }
 }

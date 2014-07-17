@@ -1,10 +1,13 @@
-﻿using Places.Helpers.Collections;
+﻿using Places.Helpers;
+using Places.Helpers.Collections;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Places.ViewModel
 {
@@ -14,6 +17,40 @@ namespace Places.ViewModel
         private MultiSelectCollection<GooglePlacesApi.Type> all;
         private ObservableCollection<Radius> radius;
 
+        private bool hasTextSearch;
+
+        public bool HasTextSearch
+        {
+            get
+            {
+                return hasTextSearch;
+            }
+            set
+            {
+                SetProperty<bool>(ref hasTextSearch, value);
+            }
+        }
+
+        
+
+        public void ValidateQuery(string query, TextBox queryTextBox)
+        {
+            if (String.IsNullOrEmpty(query) == true)
+            {
+                queryTextBox.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = Colors.Red };
+                HasTextSearch = false;
+            }
+            else 
+            {
+                HasTextSearch = true;
+            }
+        }
+
+        public void QueryBoxDefault(TextBox queryTextBox)
+        {
+            queryTextBox.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = ColorConverting.ConvertStringToColor("#FF1BA1E2") };
+        }
+
 
         public MainPanoramaViewModel(List<GooglePlacesApi.Type> require, List<GooglePlacesApi.Type> all)
         {
@@ -21,11 +58,11 @@ namespace Places.ViewModel
             this.all = new MultiSelectCollection<GooglePlacesApi.Type>(all); 
             this.radius = new ObservableCollection<Radius>() 
             {
-                new Radius() { Value = 1000 },
-                new Radius() { Value = 3000 },
-                new Radius() { Value = 5000 },
-                new Radius() { Value = 7000 },
-                new Radius() { Value = 10000 }
+                new Radius() { Value = "" },
+                new Radius() { Value = "1000" },
+                new Radius() { Value = "5000" },
+                new Radius() { Value = "10000" },
+                new Radius() { Value = "15000" }
             };
         }
 
@@ -74,6 +111,6 @@ namespace Places.ViewModel
 
     public class Radius
     {
-        public int Value { get; set; }
+        public string Value { get; set; }
     }
 }

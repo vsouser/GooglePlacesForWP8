@@ -60,7 +60,12 @@ namespace GooglePlacesApi
 
             GetToken();
 
-            Places = GetResult(jObject, searchStatus);
+            var places = GetResult(jObject, searchStatus);
+
+            foreach (Place plac in places)
+            {
+                Places.Add(plac);
+            }
 
             return Places;
         }

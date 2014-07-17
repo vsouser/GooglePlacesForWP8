@@ -128,6 +128,10 @@ namespace Places.ViewModel
         public async Task GetMorePlaces()
         {
            await SearchPlacesController.GetPlaces();
+          /* for (int i = 0; i < SearchPlacesController.Places.Count; i++)
+           {
+               Places.Add(SearchPlacesController.Places[i]);
+           }*/
            Places = SearchPlacesController.Places;
         }
 
