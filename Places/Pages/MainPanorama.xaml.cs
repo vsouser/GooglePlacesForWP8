@@ -70,12 +70,36 @@ namespace Places.Pages
         {
             string query = Query.Text;
             string radius = ((Radius)Radius.SelectedItem).Value.ToString();
+            string type = String.Empty;
+
 
             App.MainPanoramaViewModel.ValidateQuery(query, Query);
+            App.MainPanoramaViewModel.ValidateRadius(radius, Radius);
+
+            var list = App.MainPanoramaViewModel.All.SelectedItem();
+
+             
+
+             if(list.Count > 0)
+             {
+                 var types = new string[list.Count];
+
+                 for (int i = 0; i < types.Count(); i++)
+                 {
+
+                     types[i] = list[i].Key;
+                 }
+
+                 GooglePlacesApi.TypesFactory tp = new TypesFactory(types);
+
+                 type = tp.CreateType();
+             }
+
+                 
 
             if (App.MainPanoramaViewModel.HasTextSearch == true)
             {
-                App.NerbySearchViewModel = new TextSearchViewModel(query, radius);
+                App.NerbySearchViewModel = new TextSearchViewModel(query, radius, type);
                 App.NerbySearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/NerbySimplySearch.xaml", UriKind.Relative)));
             }
         }
@@ -83,6 +107,11 @@ namespace Places.Pages
         private void Query_GotFocus(object sender, RoutedEventArgs e)
         {
             App.MainPanoramaViewModel.QueryBoxDefault(Query);
+        }
+
+        private void Radius_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            App.MainPanoramaViewModel.RadiusBoxDefault(Radius);
         }
     }
 }

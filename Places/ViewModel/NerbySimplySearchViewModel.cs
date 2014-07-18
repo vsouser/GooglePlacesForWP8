@@ -39,7 +39,7 @@ namespace Places.ViewModel
             try
             {
 
-                SearchController = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", Location.ApiFormat, true, "", "", selectType.Key, "", "");
+                SearchController = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", Location.ApiFormat, false, "", "", selectType.Key, "", "");
 
                 await SearchController.GetPlaces();
 

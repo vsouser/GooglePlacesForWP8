@@ -1,4 +1,5 @@
-﻿using Places.Helpers;
+﻿using Microsoft.Phone.Controls;
+using Places.Helpers;
 using Places.Helpers.Collections;
 using System;
 using System.Collections.Generic;
@@ -46,9 +47,27 @@ namespace Places.ViewModel
             }
         }
 
+        public void ValidateRadius(string radius, ListPicker listPicker)
+        {
+            if (String.IsNullOrEmpty(radius) == true)
+            {
+                listPicker.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = Colors.Red };
+                HasTextSearch = false;
+            }
+            else
+            {
+                HasTextSearch = true;
+            }
+        }
+
         public void QueryBoxDefault(TextBox queryTextBox)
         {
             queryTextBox.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = ColorConverting.ConvertStringToColor("#FF1BA1E2") };
+        }
+
+        public void RadiusBoxDefault(ListPicker listPicker)
+        {
+            listPicker.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = ColorConverting.ConvertStringToColor("#FF1BA1E2") };
         }
 
 

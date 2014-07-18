@@ -63,7 +63,7 @@
                     <TextBlock Margin="0,0,0,0" Foreground="White" Text="Ключевая фраза*"></TextBlock>
                     <TextBox x:Name="Query" Height="75" Margin="-13,0,-13,0" BorderBrush="#FF1BA1E2" Background="White" Style="{StaticResource TextBoxStyle1}" InputScope="PersonalSurname" GotFocus="Query_GotFocus"></TextBox>
                     <TextBlock Text="Радиус(метров)*" Foreground="White"></TextBlock>
-                    <toolkit:ListPicker x:Name="Radius" Margin="0,0,0,0" Foreground="#1BA1E2" FontSize="20" ItemsSource="{Binding Radius, Mode=OneWay}" BorderBrush="#FF1BA1E2" Background="White" Template="{StaticResource ListPickerControlTemplate1}">
+                    <toolkit:ListPicker x:Name="Radius" Margin="0,0,0,0" Foreground="#1BA1E2" FontSize="20" ItemsSource="{Binding Radius, Mode=OneWay}" BorderBrush="#FF1BA1E2" Background="White" Template="{StaticResource ListPickerControlTemplate1}" SelectionChanged="Radius_SelectionChanged">
                         <toolkit:ListPicker.ItemTemplate>
                             <DataTemplate>
                                 <Grid>

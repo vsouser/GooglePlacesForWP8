@@ -10,12 +10,14 @@ namespace Places.ViewModel
     {
         private string query;
         private string radius;
+        private string types;
 
 
-        public TextSearchViewModel(string query, string radius)
+        public TextSearchViewModel(string query, string radius, string types)
         {
             this.query = query;
             this.radius = radius;
+            this.types = types;
         }
 
         public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction)
@@ -40,8 +42,7 @@ namespace Places.ViewModel
             try
             {
 
-               // SearchController = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", location.ApiFormat, true, "", "", selectType.Key, "", "");
-                SearchController = new GooglePlacesApi.TextSearchController(query, App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, radius, Location.ApiFormat, App.LanguageController.GetGooglePlacesLanguage(), true, "", "");
+                SearchController = new GooglePlacesApi.TextSearchController(query, App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, radius, Location.ApiFormat, App.LanguageController.GetGooglePlacesLanguage(), false, "", "", types);
                 
                 await SearchController.GetPlaces();
 
