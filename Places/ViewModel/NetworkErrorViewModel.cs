@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Places.ViewModel
 {
-    public class NetworkErrorViewModel
+    public class NetworkErrorViewModel : BaseErrorView
     {
-
         public NetworkErrorViewModel()
         {
            
         }
 
-        public void Navigate(Action onNavigationAction)
+        public override void Navigate(Action onNavigationAction)
         {
             onNavigationAction();
         }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Places.ViewModel
 {
-    public class GeoLocationErrorViewModel : BaseErrorView
+    public class ApiErrorViewModel : BaseErrorView
     {
-        public GeoLocationErrorViewModel()
+        public ApiErrorViewModel()
         {
 
         }

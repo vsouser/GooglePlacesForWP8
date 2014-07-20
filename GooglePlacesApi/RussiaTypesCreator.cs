@@ -36,7 +36,7 @@ namespace GooglePlacesApi
             list.Add(CreateType(Types.CHURCH, "Церковь"));
             list.Add(CreateType(Types.CITY_HALL, "Ратуша"));
             list.Add(CreateType(Types.CLOTHING_STORE, "Магазин одежды"));
-            list.Add(CreateType(Types.CONVENIENCE_STORE, "Магазин"));
+            list.Add(CreateType(Types.CONVENIENCE_STORE, "Магазин домашних товаров"));
             list.Add(CreateType(Types.COURTHOUSE, "Здание суда"));
             list.Add(CreateType(Types.DENTIST, "Дантист"));
             list.Add(CreateType(Types.DEPARTMENT_STORE, "Универмаг"));

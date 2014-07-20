@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="Places.Pages.GeoLocationError"
+    x:Class="Places.Pages.ApiError"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -22,19 +22,10 @@
         <!--ContentPanel – поместите здесь дополнительное содержимое-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12, 12,12,12">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Image Source="/Assets/GPSOff.png" Stretch="None"></Image>
-                <TextBlock Foreground="#1BA1E2" Text="Убедитесь, что на телефоне включено определения местоположения" TextAlignment="Center" TextWrapping="Wrap"  Style="{StaticResource PhoneTextTitle3Style}"></TextBlock>
+                <Image Source="/Assets/Wrong.png" Stretch="None"></Image>
+                <TextBlock Foreground="#1BA1E2" Text="Произошел сбой на серевере попробуйте повторить действие немного позже." TextAlignment="Center" TextWrapping="Wrap"  Style="{StaticResource PhoneTextTitle3Style}"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>
-
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" BackgroundColor="#1BA1E2" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="Repeat" Click="Repeat_Click" IconUri="/Assets/Repeat.png" Text="повторить"/>
-            <shell:ApplicationBarIconButton x:Name="Location" Click="Location_Click"  IconUri="/Assets/GeoLocation.png" Text="местоположение"/>
-            <shell:ApplicationBarIconButton x:Name="Airplane" Click="Airplane_Click" IconUri="/Assets/Aeroplane.png" Text="в самолете" />
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-
 
 </phone:PhoneApplicationPage>

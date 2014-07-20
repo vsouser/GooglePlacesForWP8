@@ -78,22 +78,27 @@ namespace Places.Pages
 
             var list = App.MainPanoramaViewModel.All.SelectedItem();
 
-             
 
-             if(list.Count > 0)
-             {
-                 var types = new string[list.Count];
 
-                 for (int i = 0; i < types.Count(); i++)
-                 {
+            if (list.Count > 0)
+            {
+                var types = new string[list.Count];
 
-                     types[i] = list[i].Key;
-                 }
+                for (int i = 0; i < types.Count(); i++)
+                {
 
-                 GooglePlacesApi.TypesFactory tp = new TypesFactory(types);
+                    types[i] = list[i].Key;
+                }
 
-                 type = tp.CreateType();
-             }
+                GooglePlacesApi.TypesFactory tp = new TypesFactory(types);
+
+                type = tp.CreateType();
+            }
+
+            else
+            {
+                type = String.Empty;
+            }
 
                  
 

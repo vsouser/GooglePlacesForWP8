@@ -18,7 +18,7 @@ namespace Places.ViewModel
         private MultiSelectCollection<GooglePlacesApi.Type> all;
         private ObservableCollection<Radius> radius;
 
-        private bool hasTextSearch;
+        private bool hasTextSearch = true;
 
         public bool HasTextSearch
         {
@@ -49,14 +49,21 @@ namespace Places.ViewModel
 
         public void ValidateRadius(string radius, ListPicker listPicker)
         {
-            if (String.IsNullOrEmpty(radius) == true)
+            if (HasTextSearch == false)
             {
-                listPicker.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = Colors.Red };
                 HasTextSearch = false;
             }
             else
             {
-                HasTextSearch = true;
+                if (String.IsNullOrEmpty(radius) == true)
+                {
+                    listPicker.BorderBrush = new System.Windows.Media.SolidColorBrush() { Color = Colors.Red };
+                    HasTextSearch = false;
+                }
+                else
+                {
+                    HasTextSearch = true;
+                }
             }
         }
 

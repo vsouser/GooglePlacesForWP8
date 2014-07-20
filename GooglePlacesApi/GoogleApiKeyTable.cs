@@ -25,7 +25,7 @@ namespace GooglePlacesApi
         public string GetKey()
         {
             var keyGenerator = new Random();
-            int index = keyGenerator.Next(1, maxLength);
+            int index = keyGenerator.Next(1, maxLength+1);
             currentKey = keys[index];
             return currentKey;
         }
@@ -34,7 +34,7 @@ namespace GooglePlacesApi
         public string GetOtherKey()
         {
             var keyGenerator = new Random();
-            int index = keyGenerator.Next(0, maxLength);
+            int index = keyGenerator.Next(0, maxLength+1);
             if (currentKey.Equals(keys[index]) == true)
             {
                 return GetOtherKey();

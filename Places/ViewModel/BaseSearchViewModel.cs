@@ -13,7 +13,7 @@ namespace Places.ViewModel
         protected SearchPlacesController nerbySearch;
         private GooglePlacesApi.Location location;
 
-        public abstract Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction);
+        public abstract Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction, Action apiErrorAction);
 
         public void Navigation(Action navigationAction)
         {

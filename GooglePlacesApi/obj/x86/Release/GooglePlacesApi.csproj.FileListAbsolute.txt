@@ -23,7 +23,6 @@ C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\x86\R
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\x86\Release\zh-Hant\System.Xml.XPath.resources.dll
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\x86\Release\GooglePlacesApi.dll
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\x86\Release\GooglePlacesApi.pdb
-C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\x86\Release\GooglePlacesApi.csprojResolveAssemblyReference.cache
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\x86\Release\GooglePlacesApi.dll
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\x86\Release\GooglePlacesApi.pdb
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\x86\Release\HtmlAgilityPack.dll

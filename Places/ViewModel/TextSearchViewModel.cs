@@ -13,14 +13,14 @@ namespace Places.ViewModel
         private string types;
 
 
-        public TextSearchViewModel(string query, string radius, string types)
+        public TextSearchViewModel(string query, string radius, string types = "")
         {
             this.query = query;
             this.radius = radius;
             this.types = types;
         }
 
-        public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction)
+        public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction, Action apiErrorAction)
         {
             IconStatus = "/Assets/UserLocation.png";
 
@@ -53,6 +53,14 @@ namespace Places.ViewModel
                 if (ex.Name == GooglePlacesApi.Status.ZERO_RESULTS)
                 {
                     zeroResulAction();
+                }
+                if (ex.Name == GooglePlacesApi.Status.INVALID_REQUEST)
+                {
+                    apiErrorAction();
+                }
+                if (ex.Name == GooglePlacesApi.Status.REQUEST_DENIED)
+                {
+                    apiErrorAction();
                 }
             }
             catch (NullReferenceException)

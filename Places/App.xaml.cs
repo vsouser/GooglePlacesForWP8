@@ -25,6 +25,7 @@ namespace Places
         public static ResultPageViewModel ResultPageViewModel { get; set; }
         public static BaseSearchViewModel NerbySearchViewModel { get; set; }
         public static GeoLocationErrorViewModel GeoLocationErrorViewModel { get; set; }
+        public static ApiErrorViewModel ApiErrorViewModel { get; set; }
 
         public static Place SelectPlace { get; set; }
         public static LanguageController LanguageController { get; set; }
@@ -77,7 +78,7 @@ namespace Places
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             LanguageController = new LanguageController();
-            GoogleApiKeyTable = new GoogleApiKeyTable("AIzaSyCmlHiWshBC77iFO8lJp5VqLjZurbSDcXU", "AIzaSyCRuDl06RN51s-rzbICyjagZERWSKRpep4", "AIzaSyAhMx9QEuodwotkLM0MrH-j5_7aHFEgZDo", "AIzaSyD_SAiM0LqhMn0MzJ56KvrdKm1eROoqTM4", "AIzaSyAYQdeRFOz8Vin_pzdmg2ZAr0HjDUyiTO8");
+            GoogleApiKeyTable = new GoogleApiKeyTable("AIzaSyCmlHiWshBC77iFO8lJp5VqLjZurbSDcXU", "AIzaSyCRuDl06RN51s-rzbICyjagZERWSKRpep4", "AIzaSyAhMx9QEuodwotkLM0MrH-j5_7aHFEgZDo", "AIzaSyD_SAiM0LqhMn0MzJ56KvrdKm1eROoqTM4", "AIzaSyAYQdeRFOz8Vin_pzdmg2ZAr0HjDUyiTO8", "AIzaSyBQF-Q8B0iIXeTwk-wp6H2TGXPeDORbR68", "AIzaSyB8amnrPgm0zuL2mOyLF19ZL8nGuWAA57o", "AIzaSyDHJjNda8MIhJiaFvAMbgEQxh3pbFzagrQ", "AIzaSyCwN04nDu7I6OsPnJMe99o94zEEYR4Ho08", "AIzaSyDS5k4-IHhynoWd02ZyPeowzGo-_1mi_y8");
             TypesContoller = new TypesController(LanguageController.GetGooglePlacesLanguage());
             TypesContoller.Instance();
 
@@ -85,6 +86,7 @@ namespace Places
             App.MainPanoramaViewModel = new MainPanoramaViewModel(TypesContoller.Require, TypesContoller.Types);
             App.NetworkErrorViewModel = new NetworkErrorViewModel();
             App.GeoLocationErrorViewModel = new GeoLocationErrorViewModel();
+            App.ApiErrorViewModel = new ApiErrorViewModel();
         }
 
         // Код для выполнения при активации приложения (переводится в основной режим)

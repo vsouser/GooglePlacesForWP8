@@ -44,10 +44,9 @@
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Vertical" Margin="8,0,0,5">
-                                    <TextBlock Text="{Binding Name, Mode=TwoWay}" Margin="12, 12, 12, 12" FontWeight="SemiBold" FontSize="30" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                                    <TextBlock Text="{Binding Name, Mode=TwoWay}" Margin="12, 12, 12, 12" FontWeight="SemiBold" FontSize="35" TextWrapping="Wrap" Foreground="White"></TextBlock>
                                     <TextBlock Text="{Binding Vicinity, Mode=TwoWay}" Margin="12, 0, 12, 12" FontWeight="Light" FontSize="22" TextWrapping="Wrap" Foreground="White"></TextBlock>
                                 </StackPanel>
-                                
                             </DataTemplate>
                         </phone:LongListSelector.ItemTemplate>
                     </phone:LongListSelector>
@@ -96,6 +95,11 @@
                                 <Button x:Name="Route" Tap="Route_Tap" Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
                                     <Button.Content>
                                         <Image Source="/Assets/Way-Board.png"></Image>
+                                    </Button.Content>
+                                </Button>
+                                <Button x:Name="MoreInfo"  Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
+                                    <Button.Content>
+                                        <Image Source="/Assets/Data-Find.png"></Image>
                                     </Button.Content>
                                 </Button>
                             </toolkit:WrapPanel>

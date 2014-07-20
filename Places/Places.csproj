@@ -101,6 +101,9 @@
     <Compile Include="Helpers\PriceLevelConverter.cs" />
     <Compile Include="Helpers\RatingLevelConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Pages\ApiError.xaml.cs">
+      <DependentUpon>ApiError.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GeoLocationError.xaml.cs">
       <DependentUpon>GeoLocationError.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ApiErrorViewModel.cs" />
+    <Compile Include="ViewModel\BaseErrorView.cs" />
     <Compile Include="ViewModel\BaseSearchViewModel.cs" />
     <Compile Include="ViewModel\GeoLocationErrorViewModel.cs" />
     <Compile Include="ViewModel\MainPanoramaViewModel.cs" />
@@ -141,6 +146,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Pages\ApiError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GeoLocationError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +198,7 @@
     <Content Include="Assets\Cell.png" />
     <Content Include="Assets\Closed.png" />
     <Content Include="Assets\ConnectionError.png" />
+    <Content Include="Assets\Data-Find.png" />
     <Content Include="Assets\Data-Split-01.png" />
     <Content Include="Assets\GeoLocation.png" />
     <Content Include="Assets\GPSOff.png" />
@@ -234,6 +244,7 @@
     <Content Include="Assets\View-Details.png" />
     <Content Include="Assets\Way-Board.png" />
     <Content Include="Assets\Wifi.png" />
+    <Content Include="Assets\Wrong.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
