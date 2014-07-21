@@ -176,3 +176,5 @@ C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pa
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\ApiError.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoPage.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoSearch.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoPage.g.cs
+C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoSearch.g.cs

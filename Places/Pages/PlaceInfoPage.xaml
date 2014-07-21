@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -16,7 +17,7 @@
     <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot" Background="#034888">
         <!--Элемент управления Pivot-->
-        <phone:Pivot>
+        <phone:Pivot x:Name="Pivots">
             <phone:Pivot.Title>
                 <TextBlock Text="{Binding PlaceInfo.Name, Mode=TwoWay, Converter={StaticResource TextUpperConverter}}" Foreground="#1BA1E2"></TextBlock>
             </phone:Pivot.Title>
@@ -30,21 +31,53 @@
                         <StackPanel Orientation="Vertical">
                             <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Foreground="#DE9317" Text="Адрес:"></TextBlock>
                             <TextBlock Style="{StaticResource PhoneTextTitle2Style}" Foreground="White" TextWrapping="Wrap" Text="{Binding PlaceInfo.Formatted_address}"></TextBlock>
-                            <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Foreground="#DE9317" Text="Телефон:"></TextBlock>
-                            <HyperlinkButton Foreground="White" FontSize="32" HorizontalAlignment="Left" Content="{Binding PlaceInfo.Formatted_phone_number}" Style="{StaticResource HyperlinkButtonStyle1}" />
+                            <StackPanel Visibility="{Binding PlaceInfo.Formatted_phone_number, Converter={StaticResource FormatPhoneConverter}}">
+                                <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Foreground="#DE9317" Text="Телефон:"></TextBlock>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="FormatNumber" Grid.Column="0" Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
+                                        <Button.Content>
+                                            <Image Source="/Assets/Contact.png"></Image>
+                                        </Button.Content>
+                                    </Button>
+                                    <TextBlock VerticalAlignment="Center" Grid.Column="1" Style="{StaticResource PhoneTextTitle2Style}" Foreground="White" TextWrapping="Wrap" Text="{Binding PlaceInfo.Formatted_phone_number}"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Visibility="{Binding PlaceInfo.International_phone_number, Converter={StaticResource FormatPhoneConverter}}">
+                                <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Foreground="#DE9317" Text="Телефон(международный):"></TextBlock>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="InternationalNumber" Grid.Column="0"  Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
+                                        <Button.Content>
+                                            <Image Source="/Assets/Contact.png"></Image>
+                                        </Button.Content>
+                                    </Button>
+                                    <TextBlock VerticalAlignment="Center" Grid.Column="1" Style="{StaticResource PhoneTextTitle2Style}" Foreground="White" TextWrapping="Wrap" Text="{Binding PlaceInfo.International_phone_number}"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+
+                            <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Foreground="#DE9317" Text="Рейтинг:"></TextBlock>
+                            <toolkit:Rating HorizontalAlignment="Left" Background="#034888" Margin="12, 0, 12, 0" ReadOnly="True" UnfilledItemStyle="{StaticResource UnfilledRattingStyle}" FilledItemStyle="{StaticResource FilledRattingStyle}" Value="{Binding PlaceInfo.Rating, Mode=TwoWay, Converter={StaticResource RatingLevelConverter}}"></toolkit:Rating>
+
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </phone:PivotItem>
 
-            <phone:PivotItem>
+            <phone:PivotItem x:Name="Reviews">
                 <phone:PivotItem.Header>
                     <TextBlock Text="Отзывы" Foreground="#1BA1E2"></TextBlock>
                 </phone:PivotItem.Header>
                 <Grid/>
             </phone:PivotItem>
 
-            <phone:PivotItem>
+            <phone:PivotItem x:Name="Events">
                 <phone:PivotItem.Header>
                     <TextBlock Text="События" Foreground="#1BA1E2"></TextBlock>
                 </phone:PivotItem.Header>

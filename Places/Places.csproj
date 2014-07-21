@@ -97,6 +97,7 @@
     <Compile Include="Helpers\Collections\MultiSelectCollection.cs" />
     <Compile Include="Helpers\ColorConverting.cs" />
     <Compile Include="Helpers\DistanceCalculate.cs" />
+    <Compile Include="Helpers\FormatPhoneConverter.cs" />
     <Compile Include="Helpers\OpenNowConverter.cs" />
     <Compile Include="Helpers\PriceLevelConverter.cs" />
     <Compile Include="Helpers\RatingLevelConverter.cs" />
@@ -216,6 +217,7 @@
     <Content Include="Assets\Cell.png" />
     <Content Include="Assets\Closed.png" />
     <Content Include="Assets\ConnectionError.png" />
+    <Content Include="Assets\Contact.png" />
     <Content Include="Assets\Data-Find.png" />
     <Content Include="Assets\Data-Split-01.png" />
     <Content Include="Assets\GeoLocation.png" />

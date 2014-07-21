@@ -74,6 +74,7 @@
         <utils:PriceLevelConverter x:Key="PriceLevelConverter"/>
         <utils:RatingLevelConverter x:Key="RatingLevelConverter"/>
         <utils:TextUpperController x:Key="TextUpperConverter"/>
+        <utils:FormatPhoneConverter x:Key="FormatPhoneConverter"/>
         
         <Style TargetType="my:Pushpin" x:Key="LocationPinStyle">
             <Setter Property="Template">

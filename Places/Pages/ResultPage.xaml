@@ -31,7 +31,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel x:Name="TitlePanel" Grid.Row="0"  Margin="-12,0,0,12">
-                    <TextBlock Text="Найденые места" Foreground="White" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+                    <TextBlock Text="Найденые места" Foreground="#1BA1E2" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
                 </StackPanel>
 
                 <Grid Grid.Row="1">
