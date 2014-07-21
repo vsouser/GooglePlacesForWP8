@@ -100,6 +100,7 @@
     <Compile Include="Helpers\OpenNowConverter.cs" />
     <Compile Include="Helpers\PriceLevelConverter.cs" />
     <Compile Include="Helpers\RatingLevelConverter.cs" />
+    <Compile Include="Helpers\TextUpperController.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Pages\ApiError.xaml.cs">
       <DependentUpon>ApiError.xaml</DependentUpon>
@@ -115,6 +116,12 @@
     </Compile>
     <Compile Include="Pages\NetworkError.xaml.cs">
       <DependentUpon>NetworkError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlaceInfoPage.xaml.cs">
+      <DependentUpon>PlaceInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlaceInfoSearch.xaml.cs">
+      <DependentUpon>PlaceInfoSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ResultPage.xaml.cs">
       <DependentUpon>ResultPage.xaml</DependentUpon>
@@ -133,11 +140,14 @@
     </Compile>
     <Compile Include="ViewModel\ApiErrorViewModel.cs" />
     <Compile Include="ViewModel\BaseErrorView.cs" />
+    <Compile Include="ViewModel\BaseSearchPlacesViewModel.cs" />
     <Compile Include="ViewModel\BaseSearchViewModel.cs" />
     <Compile Include="ViewModel\GeoLocationErrorViewModel.cs" />
     <Compile Include="ViewModel\MainPanoramaViewModel.cs" />
     <Compile Include="ViewModel\NerbySimplySearchViewModel.cs" />
     <Compile Include="ViewModel\NetworkErrorViewModel.cs" />
+    <Compile Include="ViewModel\PlaceInfoSearchViewModel.cs" />
+    <Compile Include="ViewModel\PlaceInfoViewModel.cs" />
     <Compile Include="ViewModel\ResultPageViewModel.cs" />
     <Compile Include="ViewModel\TextSearchViewModel.cs" />
   </ItemGroup>
@@ -163,6 +173,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\NetworkError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlaceInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlaceInfoSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

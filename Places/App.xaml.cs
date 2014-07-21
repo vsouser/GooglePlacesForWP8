@@ -27,6 +27,9 @@ namespace Places
         public static GeoLocationErrorViewModel GeoLocationErrorViewModel { get; set; }
         public static ApiErrorViewModel ApiErrorViewModel { get; set; }
 
+        public static PlaceInfoSearchViewModel PlaceInfoSearchViewModel { get; set; }
+        public static PlaceInfoViewModel PlaceInfoViewModel { get; set; }
+
         public static Place SelectPlace { get; set; }
         public static LanguageController LanguageController { get; set; }
         public static GoogleApiKeyTable GoogleApiKeyTable { get; set; }

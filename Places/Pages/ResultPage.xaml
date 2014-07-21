@@ -62,8 +62,6 @@
             <Grid Grid.Column="0" Background="#1BA1E2">
                 <Image Source="/Assets/Data-Split-01.png" Width="25" Height="25" Stretch="Fill"></Image>
             </Grid>
-
-
             <Controls:Map x:Name="map" Grid.Column="1">
             </Controls:Map>
         </Grid>
@@ -97,7 +95,7 @@
                                         <Image Source="/Assets/Way-Board.png"></Image>
                                     </Button.Content>
                                 </Button>
-                                <Button x:Name="MoreInfo"  Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
+                                <Button x:Name="MoreInfo" Tap="MoreInfo_Tap"  Width="100" Height="100" Style="{StaticResource ButtonStyle1}">
                                     <Button.Content>
                                         <Image Source="/Assets/Data-Find.png"></Image>
                                     </Button.Content>

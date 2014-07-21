@@ -25,7 +25,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12, 12,12,12">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Image Source="/Assets/ResultError.png" Stretch="None"></Image>
-                <TextBlock Foreground="#1BA1E2" Text="По данному запросу места не найдены." TextAlignment="Center" TextWrapping="Wrap"  Style="{StaticResource PhoneTextTitle3Style}"></TextBlock>
+                <TextBlock Foreground="#1BA1E2" Text="По данному запросу данные не найдены." TextAlignment="Center" TextWrapping="Wrap"  Style="{StaticResource PhoneTextTitle3Style}"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>

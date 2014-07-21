@@ -130,5 +130,11 @@ namespace Places.Pages
             direction.Show();
         }
 
+        private void MoreInfo_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            App.PlaceInfoSearchViewModel = new ViewModel.PlaceInfoSearchViewModel(App.ResultPageViewModel.SelectPlace.Reference);
+            App.PlaceInfoSearchViewModel.Navigation(() => NavigationService.Navigate(new Uri("/Pages/PlaceInfoSearch.xaml", UriKind.Relative)));
+        }
+
     }
 }
