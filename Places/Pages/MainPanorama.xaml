@@ -29,7 +29,6 @@
                 </Grid>
             </phone:Panorama.Title>
 
-            <!--Первый элемент Panorama-->
             <phone:PanoramaItem >
                 <phone:PanoramaItem.Header>
                     <Grid>

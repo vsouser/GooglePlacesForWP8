@@ -159,7 +159,6 @@ C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\x86\Release\zh-C
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\Bin\x86\Release\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Places.csprojResolveAssemblyReference.cache
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\App.g.cs
-C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\MainPage.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\GeoLocationError.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\MainPanorama.g.cs
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\NerbySimplySearch.g.cs
@@ -176,3 +175,6 @@ C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\XapC
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\ApiError.g.cs
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\PlaceInfoPage.g.cs
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\PlaceInfoSearch.g.cs
+C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\ApiError.g.cs
+C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\PlaceInfoPage.g.cs
+C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\x86\Release\Pages\PlaceInfoSearch.g.cs

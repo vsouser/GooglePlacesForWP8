@@ -224,6 +224,8 @@
     <Content Include="Assets\GPSOff.png" />
     <Content Include="Assets\Icon101.png" />
     <Content Include="Assets\Icon202.png" />
+    <Content Include="Assets\Information.png" />
+    <Content Include="Assets\Link.png" />
     <Content Include="Assets\Location.png" />
     <Content Include="Assets\Map.png" />
     <Content Include="Assets\Open.png" />
