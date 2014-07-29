@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
+using Microsoft.Phone.UserData;
+using System.Device.Location;
 
 namespace Places.Pages
 {
@@ -21,7 +23,8 @@ namespace Places.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            App.PlaceInfoViewModel = new ViewModel.PlaceInfoViewModel(App.PlaceInfoSearchViewModel.PlaceInfo, App.ResultPageViewModel.DistancePlace, App.ResultPageViewModel.SelectPlace.Price_level, App.ResultPageViewModel.SelectPlace.Opening_hours.Open_now);
+            App.PlaceInfoViewModel = new ViewModel.PlaceInfoViewModel(App.PlaceInfoSearchViewModel.PlaceInfo, App.ResultPageViewModel.DistancePlace, App.ResultPageViewModel.SelectPlace.Price_level, App.ResultPageViewModel.SelectPlace.Opening_hours.Open_now, App.ResultPageViewModel.UserGeoCoordinate, new GeoCoordinate(App.ResultPageViewModel.SelectPlace.Geometry.Location.Lat, App.ResultPageViewModel.SelectPlace.Geometry.Location.Lng));
+            App.PlaceInfoViewModel.InitData();
             LayoutRoot.DataContext = App.PlaceInfoViewModel;
         }
 
@@ -60,6 +63,48 @@ namespace Places.Pages
             phoneCall.PhoneNumber = App.PlaceInfoViewModel.PlaceInfo.International_phone_number;
             phoneCall.DisplayName = App.PlaceInfoViewModel.PlaceInfo.Name;
             phoneCall.Show();
+        }
+
+        private void Route_Click(object sender, EventArgs e)
+        {
+            MapsDirectionsTask direction = new MapsDirectionsTask();
+
+            LabeledMapLocation startLabeled = new LabeledMapLocation("Ваше местоположение", App.PlaceInfoViewModel.UserLocation);
+
+            direction.Start = startLabeled;
+
+            LabeledMapLocation endLabeled = new LabeledMapLocation(App.PlaceInfoViewModel.PlaceInfo.Name, App.PlaceInfoViewModel.PlaceLocation);
+
+            direction.End = endLabeled;
+
+            direction.Show();
+        }
+
+        private void SaveData_Click(object sender, EventArgs e)
+        {
+            Contacts contacts = new Contacts();
+
+            contacts.SearchAsync(App.PlaceInfoViewModel.PlaceInfo.Name, FilterKind.DisplayName, "Contact search");
+
+            contacts.SearchCompleted += contacts_SearchCompleted;
+            
+        }
+
+        void contacts_SearchCompleted(object sender, ContactsSearchEventArgs e)
+        {
+            if (e.Results.Count() > 0)
+            {
+                MessageBox.Show(" Контакт " + App.PlaceInfoViewModel.PlaceInfo.Name + " уже существует");
+            }
+            else
+            {
+                SaveContactTask saveContact = new SaveContactTask();
+                saveContact.FirstName = App.PlaceInfoViewModel.PlaceInfo.Name;
+                saveContact.HomeAddressStreet = App.PlaceInfoViewModel.PlaceInfo.Formatted_address;
+                saveContact.Website = App.PlaceInfoViewModel.PlaceInfo.Website;
+                saveContact.WorkPhone = App.PlaceInfoViewModel.PlaceInfo.Formatted_phone_number;
+                saveContact.Show();
+            }
         }
 
     }

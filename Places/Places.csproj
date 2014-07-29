@@ -96,6 +96,7 @@
     <Compile Include="Helpers\Collections\LongListSelector.cs" />
     <Compile Include="Helpers\Collections\MultiSelectCollection.cs" />
     <Compile Include="Helpers\ColorConverting.cs" />
+    <Compile Include="Helpers\ConvertToLocalTime.cs" />
     <Compile Include="Helpers\DistanceCalculate.cs" />
     <Compile Include="Helpers\FormatPhoneConverter.cs" />
     <Compile Include="Helpers\OpenNowConverter.cs" />
@@ -210,6 +211,7 @@
   <ItemGroup>
     <Content Include="Assets\Aeroplane.png" />
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar\back.png" />
     <Content Include="Assets\AppBar\refresh.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -220,6 +222,7 @@
     <Content Include="Assets\Contact.png" />
     <Content Include="Assets\Data-Find.png" />
     <Content Include="Assets\Data-Split-01.png" />
+    <Content Include="Assets\Events.png" />
     <Content Include="Assets\GeoLocation.png" />
     <Content Include="Assets\GPSOff.png" />
     <Content Include="Assets\Icon101.png" />
@@ -230,8 +233,11 @@
     <Content Include="Assets\Map.png" />
     <Content Include="Assets\Open.png" />
     <Content Include="Assets\PlacePin.png" />
+    <Content Include="Assets\Preview.png" />
     <Content Include="Assets\Repeat.png" />
     <Content Include="Assets\ResultError.png" />
+    <Content Include="Assets\Route.png" />
+    <Content Include="Assets\SavePlace.png" />
     <Content Include="Assets\Search.png" />
     <Content Include="Assets\SearchPlaces.png" />
     <Content Include="Assets\Tiles\Icon\ATM.png" />
@@ -287,7 +293,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="Helpers\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />

@@ -75,6 +75,7 @@
         <utils:RatingLevelConverter x:Key="RatingLevelConverter"/>
         <utils:TextUpperController x:Key="TextUpperConverter"/>
         <utils:FormatPhoneConverter x:Key="FormatPhoneConverter"/>
+        <utils:ConvertToLocalTime x:Key="ConvertToLocalTimeConverter"></utils:ConvertToLocalTime>
         
         <Style TargetType="my:Pushpin" x:Key="LocationPinStyle">
             <Setter Property="Template">

@@ -21,13 +21,13 @@
         <phone:Panorama x:Name="Sections">
             <phone:Panorama.Title>
                 <Grid Margin="15,55,0,0">
-                    <TextBlock Foreground="#1BA1E2" Grid.Column="1"  VerticalAlignment="Center" Width="420" TextWrapping="Wrap" FontSize="36" Text="{Binding PlaceInfo.Name, Mode=TwoWay}"></TextBlock>
+                    <TextBlock Foreground="#FFDE9317" Grid.Column="1"  VerticalAlignment="Center" Width="420" TextWrapping="Wrap" FontSize="36" FontWeight="SemiBold" Text="{Binding PlaceInfo.Name, Mode=TwoWay}"></TextBlock>
                 </Grid>
             </phone:Panorama.Title>
 
-            <phone:PanoramaItem >
+            <phone:PanoramaItem>
                 <phone:PanoramaItem.Header>
-                    <Grid Margin="0,30,0,0">
+                    <Grid Margin="0,20,0,0">
                         <StackPanel Orientation="Horizontal">
                         <Image Stretch="None" Source="/Assets/Information.png"></Image>
                         <TextBlock Margin="10,0,0,6" FontSize="50" Foreground="#1BA1E2" Text="Информация"></TextBlock>
@@ -45,13 +45,16 @@
 
                             <TextBlock Text="Открыто сейчас:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
                             <Image Margin="5,0,0,0" HorizontalAlignment="Left" Source="{Binding OpenNow, Mode=TwoWay, Converter={StaticResource OpenNowConverter}}"  Width="128" Height="128" Stretch="Fill"></Image>
-                            
-                            <TextBlock Text="Ссылка на Website:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
-                            <HyperlinkButton x:Name="Site" Tap="Site_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Website}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
 
-                            <TextBlock Text="Ссылка на Google Place:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
-                            <HyperlinkButton x:Name="Google" Tap="Google_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Url}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
+                            <StackPanel Visibility="{Binding PlaceInfo.Website, Converter={StaticResource FormatPhoneConverter}}">
+                                <TextBlock Text="Ссылка на Website:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
+                                <HyperlinkButton x:Name="Site" Tap="Site_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Website}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
+                            </StackPanel>
 
+                            <StackPanel Visibility="{Binding PlaceInfo.Url, Converter={StaticResource FormatPhoneConverter}}">
+                                <TextBlock Text="Ссылка на Google Place:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
+                                <HyperlinkButton x:Name="Google" Tap="Google_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Url}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
+                            </StackPanel>
 
                             <StackPanel Visibility="{Binding PlaceInfo.Formatted_phone_number, Converter={StaticResource FormatPhoneConverter}}">
                                 <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Foreground="#DE9317" Text="Телефон:"></TextBlock>
@@ -95,31 +98,39 @@
                 </Grid>
             </phone:PanoramaItem>
 
-            <phone:PanoramaItem >
+            <phone:PanoramaItem Visibility="{Binding RevewsVisibility}">
                 <phone:PanoramaItem.Header>
-                    <Grid>
-                        <TextBlock FontSize="50" Foreground="#1BA1E2" Text="Отзывы"></TextBlock>
+                    <Grid Margin="0,20,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Stretch="None" Source="/Assets/Preview.png"></Image>
+                            <TextBlock Margin="10,0,0,6" FontSize="50" Foreground="#1BA1E2" Text="Отзывы"></TextBlock>
+                        </StackPanel>
                     </Grid>
                 </phone:PanoramaItem.Header>
 
-                <Grid Margin="13,-30,0,16">
-
-                </Grid>
-            </phone:PanoramaItem>
-
-            <phone:PanoramaItem >
-                <phone:PanoramaItem.Header>
-                    <Grid>
-                        <TextBlock FontSize="50" Foreground="#1BA1E2" Text="События"></TextBlock>
-                    </Grid>
-                </phone:PanoramaItem.Header>
-
-                <Grid Margin="13,-30,0,16">
-
+                <Grid Margin="0,0,0,12">
+                    <phone:LongListSelector Margin="1,-8,0,0" LayoutMode="List" ItemsSource="{Binding PlaceInfo.Reviews}">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Author_name}"  Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
+                                    <TextBlock VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" Foreground="White" TextWrapping="Wrap" Text="{Binding Text}"></TextBlock>
+                                    <TextBlock Text="{Binding Time, Converter={StaticResource ConvertToLocalTimeConverter}}"  Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#1BA1E2"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
                 </Grid>
             </phone:PanoramaItem>
 
         </phone:Panorama>
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/Route.png" x:Name="Route" Click="Route_Click" Text="Проложить маршрут"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/SavePlace.png" x:Name="SaveData" Click="SaveData_Click" Text="Сохранить данные"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
