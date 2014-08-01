@@ -71,9 +71,9 @@
                             </DataTemplate>
                         </toolkit:ListPicker.ItemTemplate>
                     </toolkit:ListPicker>
-                    <TextBlock Text="Тип" Margin="0,10,0,5" Foreground="White"></TextBlock>
-
-                    <list:LongListSelector Height="280" x:Name="Items" ItemsSource="{Binding All.Items, Mode=TwoWay}">
+                    
+                    <TextBlock Visibility="Collapsed" Text="Тип" Margin="0,10,0,5" Foreground="White"></TextBlock>
+                    <list:LongListSelector Visibility="Collapsed" Height="280" x:Name="Items" ItemsSource="{Binding All.Items, Mode=TwoWay}">
                         <list:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="-10,0,0,-20" Orientation="Horizontal">
@@ -83,12 +83,8 @@
                         </list:LongListSelector.ItemTemplate>
                     </list:LongListSelector>
 
-                    <Button x:Name="Search" Tap="Search_Tap" Height="75" Width="429" Margin="-10,0,0,0"   BorderBrush="White" Foreground="White" Background="#FFDE9317" Content="Найти"></Button>
-
+                    <Button x:Name="Search" Tap="Search_Tap" Height="75" Width="429" Margin="-10,20,0,0"   BorderBrush="White" Foreground="White" Background="#FFDE9317" Content="Найти"></Button>
                 </StackPanel>
-
-
-
             </phone:PanoramaItem>
         </phone:Panorama>
     </Grid>

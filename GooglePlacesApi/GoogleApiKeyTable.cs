@@ -30,20 +30,10 @@ namespace GooglePlacesApi
             return currentKey;
         }
 
-
-        public string GetOtherKey()
+        public void RemoveKey()
         {
-            var keyGenerator = new Random();
-            int index = keyGenerator.Next(0, maxLength+1);
-            if (currentKey.Equals(keys[index]) == true)
-            {
-                return GetOtherKey();
-            }
-            else
-            {
-                currentKey = keys[index];
-                return currentKey;
-            }
+           var item = keys.FirstOrDefault(predicate => predicate.Value == currentKey);
+           keys.Remove(item.Key);
         }
     }
 }

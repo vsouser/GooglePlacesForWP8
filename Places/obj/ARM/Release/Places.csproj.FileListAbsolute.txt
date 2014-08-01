@@ -178,3 +178,5 @@ C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Page
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoSearch.g.cs
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoPage.g.cs
 C:\Users\andre_000\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoSearch.g.cs
+C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\OverLimitQueryError.g.cs
+C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\Places\obj\ARM\Release\Pages\PlaceInfoNotFound.g.cs

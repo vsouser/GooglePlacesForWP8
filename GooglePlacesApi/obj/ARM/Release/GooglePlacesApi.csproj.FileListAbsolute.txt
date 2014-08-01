@@ -48,3 +48,4 @@ C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Rel
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\Bin\ARM\Release\zh-Hant\System.Xml.XPath.resources.dll
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\ARM\Release\GooglePlacesApi.dll
 C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\ARM\Release\GooglePlacesApi.pdb
+C:\Users\Tokarew\Documents\GitHub\GooglePlacesForWP8\GooglePlacesApi\obj\ARM\Release\GooglePlacesApi.csprojResolveAssemblyReference.cache

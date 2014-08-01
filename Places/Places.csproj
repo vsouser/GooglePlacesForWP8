@@ -119,6 +119,12 @@
     <Compile Include="Pages\NetworkError.xaml.cs">
       <DependentUpon>NetworkError.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OverLimitQueryError.xaml.cs">
+      <DependentUpon>OverLimitQueryError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlaceInfoNotFound.xaml.cs">
+      <DependentUpon>PlaceInfoNotFound.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PlaceInfoPage.xaml.cs">
       <DependentUpon>PlaceInfoPage.xaml</DependentUpon>
     </Compile>
@@ -178,6 +184,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OverLimitQueryError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlaceInfoNotFound.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PlaceInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +246,7 @@
     <Content Include="Assets\Location.png" />
     <Content Include="Assets\Map.png" />
     <Content Include="Assets\Open.png" />
+    <Content Include="Assets\PlaceError.png" />
     <Content Include="Assets\PlacePin.png" />
     <Content Include="Assets\Preview.png" />
     <Content Include="Assets\Repeat.png" />
@@ -272,7 +287,6 @@
     <Content Include="Assets\View-Details.png" />
     <Content Include="Assets\Way-Board.png" />
     <Content Include="Assets\Wifi.png" />
-    <Content Include="Assets\Wrong.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />

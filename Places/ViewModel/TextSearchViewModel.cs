@@ -20,7 +20,7 @@ namespace Places.ViewModel
             this.types = types;
         }
 
-        public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction, Action apiErrorAction)
+        public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction, Action apiErrorAction, Action queryLimitErrorAction)
         {
             IconStatus = "/Assets/UserLocation.png";
 
@@ -57,6 +57,11 @@ namespace Places.ViewModel
                 if (ex.Name == GooglePlacesApi.Status.INVALID_REQUEST)
                 {
                     apiErrorAction();
+                }
+                if (ex.Name == GooglePlacesApi.Status.OVER_QUERY_LIMIT)
+                {
+                    App.GoogleApiKeyTable.RemoveKey();
+                    queryLimitErrorAction();
                 }
                 if (ex.Name == GooglePlacesApi.Status.REQUEST_DENIED)
                 {

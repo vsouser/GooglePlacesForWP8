@@ -14,7 +14,7 @@ namespace Places.ViewModel
         protected PlaceInfoController placeInfoController;
 
 
-        public abstract Task GetData(Action compliteAction, Action zeroResulAction, Action apiErrorAction);
+        public abstract Task GetData(Action compliteAction, Action zeroResulAction, Action apiErrorAction, Action overQueryLimitError, Action placeNotFoundError);
 
         public void Navigation(Action navigationAction)
         {

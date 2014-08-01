@@ -17,7 +17,7 @@ namespace Places.ViewModel
             this.selectType = selectType;
         }
 
-        public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction, Action apiErrorAction)
+        public override async Task GetData(Action geoLocationError, Action compliteAction, Action zeroResulAction, Action apiErrorAction, Action queryLimitErrorAction)
         {
             IconStatus = "/Assets/UserLocation.png";
 
@@ -38,8 +38,9 @@ namespace Places.ViewModel
 
             try
             {
+                string key = App.GoogleApiKeyTable.GetKey();
 
-                SearchController = new GooglePlacesApi.NearbySearchController(App.GoogleApiKeyTable.GetKey(), GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", Location.ApiFormat, false, "", "", selectType.Key, "", "");
+                SearchController = new GooglePlacesApi.NearbySearchController(key, GooglePlacesApi.Sensor.TRUE, App.LanguageController.GetGooglePlacesLanguage(), "1000", Location.ApiFormat, false, "", "", selectType.Key, "", "");
 
                 await SearchController.GetPlaces();
 
@@ -54,6 +55,11 @@ namespace Places.ViewModel
                 if (ex.Name == GooglePlacesApi.Status.INVALID_REQUEST)
                 {
                     apiErrorAction();
+                }
+                if (ex.Name == GooglePlacesApi.Status.OVER_QUERY_LIMIT)
+                {
+                    App.GoogleApiKeyTable.RemoveKey();
+                    queryLimitErrorAction();
                 }
                 if (ex.Name == GooglePlacesApi.Status.REQUEST_DENIED)
                 {
