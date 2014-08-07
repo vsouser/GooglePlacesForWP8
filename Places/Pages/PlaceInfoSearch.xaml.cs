@@ -21,7 +21,7 @@ namespace Places.Pages
         {
             base.OnNavigatedTo(e);
             ContentPanel.DataContext = App.NerbySearchViewModel;
-            await App.PlaceInfoSearchViewModel.GetData(() => NavigationService.Navigate(new Uri("/Pages/PlaceInfoPage.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/ZeroResultError.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/ApiError.xaml", UriKind.Relative)));
+            await App.PlaceInfoSearchViewModel.GetData(() => NavigationService.Navigate(new Uri("/Pages/PlaceInfoPage.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/ZeroResultError.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/ApiError.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/OverLimitQueryError.xaml", UriKind.Relative)), () => NavigationService.Navigate(new Uri("/Pages/OverLimitQueryError.xaml", UriKind.Relative)));
      
         
         }

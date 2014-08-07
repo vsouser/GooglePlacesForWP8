@@ -16,5 +16,12 @@ namespace Places.Pages
         {
             InitializeComponent();
         }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+
+            NavigationService.Navigate(new Uri("/Pages/MainPanorama.xaml", UriKind.Relative));
+        }
     }
 }

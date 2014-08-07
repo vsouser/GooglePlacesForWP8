@@ -60,7 +60,7 @@
 
                 <StackPanel Margin="13,-30,0,16">
                     <TextBlock Margin="0,0,0,0" Foreground="White" Text="Ключевая фраза*"></TextBlock>
-                    <TextBox x:Name="Query" Height="75" Margin="-13,0,-13,0" BorderBrush="#FF1BA1E2" Background="White" Style="{StaticResource TextBoxStyle1}" InputScope="PersonalSurname" GotFocus="Query_GotFocus"></TextBox>
+                    <TextBox x:Name="Query"  Height="75" Margin="-13,0,-13,0" BorderBrush="#FF1BA1E2" Background="White" Style="{StaticResource TextBoxStyle1}" InputScope="PersonalSurname" GotFocus="Query_GotFocus" KeyDown="Query_KeyDown"></TextBox>
                     <TextBlock Text="Радиус(метров)*" Foreground="White"></TextBlock>
                     <toolkit:ListPicker x:Name="Radius" Margin="0,0,0,0" Foreground="#1BA1E2" FontSize="20" ItemsSource="{Binding Radius, Mode=OneWay}" BorderBrush="#FF1BA1E2" Background="White" Template="{StaticResource ListPickerControlTemplate1}" SelectionChanged="Radius_SelectionChanged">
                         <toolkit:ListPicker.ItemTemplate>
@@ -86,7 +86,14 @@
                     <Button x:Name="Search" Tap="Search_Tap" Height="75" Width="429" Margin="-10,20,0,0"   BorderBrush="White" Foreground="White" Background="#FFDE9317" Content="Найти"></Button>
                 </StackPanel>
             </phone:PanoramaItem>
+
         </phone:Panorama>
     </Grid>
-
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="AddMap" Click="AddMap_Click" IconUri="/Assets/AddMap.png" Text="Загрузить карты"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
 </phone:PhoneApplicationPage>

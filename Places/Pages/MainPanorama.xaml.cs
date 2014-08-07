@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using Places.ViewModel;
 using Microsoft.Phone.Net.NetworkInformation;
 using GooglePlacesApi;
@@ -118,5 +119,20 @@ namespace Places.Pages
         {
             App.MainPanoramaViewModel.RadiusBoxDefault(Radius);
         }
+
+        private void AddMap_Click(object sender, EventArgs e)
+        {
+            MapDownloaderTask mapDownloadTask = new MapDownloaderTask();
+            mapDownloadTask.Show();
+        }
+
+        private void Query_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                this.Focus();
+            }
+        }
+
     }
 }

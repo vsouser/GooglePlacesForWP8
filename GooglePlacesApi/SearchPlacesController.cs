@@ -146,8 +146,9 @@ namespace GooglePlacesApi
                 {
                     Result = await httpClient.GetStringAsync(url);
                 }
-                catch
+                catch(Exception ex)
                 {
+                    var message = ex.Message;
                     throw new SearchPlacesException("No internet connection or server is not response", Status.INVALID_REQUEST);
                 }
             }

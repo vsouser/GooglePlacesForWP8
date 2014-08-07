@@ -44,7 +44,7 @@ namespace Places.Pages
             }
 
 
-            map.SetView(App.ResultPageViewModel.UserGeoCoordinate, 17);
+            map.SetView(App.ResultPageViewModel.UserGeoCoordinate, 15);
 
             map.Layers.Add(App.ResultPageViewModel.CreateLocationPlaces());
 
@@ -66,6 +66,11 @@ namespace Places.Pages
 
         private async void More_Click(object sender, EventArgs e)
         {
+            Progress.Visibility = System.Windows.Visibility.Visible;
+            ApplicationBar.IsVisible = false;
+            LocalSearch.IsReadOnly = true;
+            Places.IsHitTestVisible = false;
+
             await App.ResultPageViewModel.GetMorePlaces();
 
             map.Layers.Clear();
@@ -74,9 +79,14 @@ namespace Places.Pages
 
             map.Layers.Add(App.ResultPageViewModel.CreatePinPlaces(App.ResultPageViewModel.SearchPlacesController.Places, placeMouseButtonTap));
 
+            Progress.Visibility = System.Windows.Visibility.Collapsed;
+            LocalSearch.IsReadOnly = false;
+            Places.IsHitTestVisible = true;
+
             if (App.ResultPageViewModel.SearchPlacesController.IsNextPage == true)
             {
                 ApplicationBar.IsVisible = true;
+                
             }
             else
             {
@@ -87,7 +97,15 @@ namespace Places.Pages
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
-            NavigationService.Navigate(new Uri("/Pages/MainPanorama.xaml", UriKind.Relative));
+            if (LayoutRoot.SelectedIndex > 0)
+            {
+                e.Cancel = true;
+                LayoutRoot.SelectedIndex -= 1;
+            }
+            else
+            {
+                NavigationService.Navigate(new Uri("/Pages/MainPanorama.xaml", UriKind.Relative));
+            }
         }
 
         private void LocalSearhc_TextChanged(object sender, TextChangedEventArgs e)

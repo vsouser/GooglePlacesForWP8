@@ -48,12 +48,12 @@
 
                             <StackPanel Visibility="{Binding PlaceInfo.Website, Converter={StaticResource FormatPhoneConverter}}">
                                 <TextBlock Text="Ссылка на Website:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
-                                <HyperlinkButton x:Name="Site" Tap="Site_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Website}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
+                                <HyperlinkButton x:Name="Site" Foreground="White" Tap="Site_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Website}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
                             </StackPanel>
 
                             <StackPanel Visibility="{Binding PlaceInfo.Url, Converter={StaticResource FormatPhoneConverter}}">
                                 <TextBlock Text="Ссылка на Google Place:" Style="{StaticResource PhoneTextTitle3Style}" TextWrapping="Wrap"  Foreground="#DE9317"></TextBlock>
-                                <HyperlinkButton x:Name="Google" Tap="Google_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Url}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
+                                <HyperlinkButton x:Name="Google" Foreground="White" Tap="Google_Tap" Style="{StaticResource HyperlinkButtonStyle1}" Content="{Binding PlaceInfo.Url}" HorizontalAlignment="Left" FontSize="32"></HyperlinkButton>
                             </StackPanel>
 
                             <StackPanel Visibility="{Binding PlaceInfo.Formatted_phone_number, Converter={StaticResource FormatPhoneConverter}}">

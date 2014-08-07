@@ -17,7 +17,7 @@ namespace Places.ViewModel
             this.references = references;
         }
 
-        public override async Task GetData(Action compliteAction, Action zeroResulAction, Action apiErrorAction, Action )
+        public override async Task GetData(Action compliteAction, Action zeroResulAction, Action apiErrorAction, Action queryLimitErrorAction, Action placeNotFoundError)
         {
             IconStatus = "/Assets/SearchPlaces.png";
 
@@ -41,11 +41,12 @@ namespace Places.ViewModel
                 }
                 if (ex.Name == GooglePlacesApi.Status.OVER_QUERY_LIMIT)
                 {
-                    apiErrorAction();
+                    App.GoogleApiKeyTable.RemoveKey();
+                    queryLimitErrorAction();
                 }
                 if (ex.Name == GooglePlacesApi.Status.NOT_FOUND)
                 {
-
+                    placeNotFoundError();
                 }
                 if (ex.Name == GooglePlacesApi.Status.UNKNOWN_ERROR)
                 {
